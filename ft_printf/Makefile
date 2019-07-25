@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/25 13:07:45 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/25 13:43:01 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/25 14:13:21 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,7 @@ NAME := ft_printf.a
 DIR_BONUS := bonus/
 DIR_BUF := buf/
 DIR_SRC_NUM_TO_STR := src_num_to_str/
-DIR_MAIN := .
-DIR_BIN := bin/
-DIR_INCLUDE := ../include
+DIR_SRC := src/
 
 SRC_MAIN := 		ft_printf.c\
 						other.c\
@@ -32,7 +30,7 @@ SRC_BONUS := 		color.c\
 						for_date.c\
 						invisible_sym.c\
 						size_formats.c\
-						utf8.c\
+						utf_8.c\
 						work_wchar.c\
 						write_to_file.c
 
@@ -49,22 +47,4 @@ SRC_NUM_TO_STR :=	base_to_str.c\
 						str_to_str.c
 
 SRCS_FT_PRINTF := $(SRC_MAIN) $(SRC_BUF) $(SRC_BONUS) $(SRC_NUM_TO_STR)
-DIRS_FT_PRINTF := $(DIR_MAIN) $(DIR_BUF) $(DIR_BONUS) $(DIR_SRC_NUM_TO_STR)
-# SRCS := $(SRC_MAIN) $(SRC_BUF) $(SRC_BONUS) $(SRC_NUM_TO_STR)
-# OBJS := $(SRCS:.c=.o)
-
-# DIRS_SRC := $(DIR_MAIN) $(DIR_BUF) $(DIR_BONUS) $(DIR_SRC_NUM_TO_STR)
-
-# vpath %.c $(DIRS)
-# vpath %.o $(DIR_BIN)
-# vpath %.h $(DIR_INCLUDE)
-
-# all: $(NAME)
-
-# $(NAME): $(OBJS)
-# 	ar rc $@ $(addprefix $(DIR_BIN), $<)
-
-# $(OBJS):%.o:%.c $(HEADERS)
-
-# echo:
-# 	echo $(OBJS)
+DIRS_FT_PRINTF := $(DIR_SRC) $(addprefix $(DIR_SRC), $(DIR_MAIN) $(DIR_BUF) $(DIR_BONUS) $(DIR_SRC_NUM_TO_STR))
