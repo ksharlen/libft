@@ -6,11 +6,11 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/25 13:07:45 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/25 14:13:21 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/25 14:39:01 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := ft_printf.a
+NAME := ft_printf
 
 DIR_BONUS := bonus/
 DIR_BUF := buf/
