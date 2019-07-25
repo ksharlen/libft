@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/25 13:07:45 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/25 13:19:23 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/25 13:43:01 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ DIR_BUF := buf/
 DIR_SRC_NUM_TO_STR := src_num_to_str/
 DIR_MAIN := .
 DIR_BIN := bin/
+DIR_INCLUDE := ../include
 
 SRC_MAIN := 		ft_printf.c\
 						other.c\
@@ -47,8 +48,23 @@ SRC_NUM_TO_STR :=	base_to_str.c\
 						select_num_sys.c\
 						str_to_str.c
 
-DIRS_SRC := $(DIR_MAIN) $(DIR_BUF) $(DIR_BONUS) $(DIR_SRC_NUM_TO_STR)
+SRCS_FT_PRINTF := $(SRC_MAIN) $(SRC_BUF) $(SRC_BONUS) $(SRC_NUM_TO_STR)
+DIRS_FT_PRINTF := $(DIR_MAIN) $(DIR_BUF) $(DIR_BONUS) $(DIR_SRC_NUM_TO_STR)
+# SRCS := $(SRC_MAIN) $(SRC_BUF) $(SRC_BONUS) $(SRC_NUM_TO_STR)
+# OBJS := $(SRCS:.c=.o)
 
-vpath %.c $(DIRS)
-vpath %.o $(DIR_BIN)
-vpath %.h $(DIR_INCLUDE)
+# DIRS_SRC := $(DIR_MAIN) $(DIR_BUF) $(DIR_BONUS) $(DIR_SRC_NUM_TO_STR)
+
+# vpath %.c $(DIRS)
+# vpath %.o $(DIR_BIN)
+# vpath %.h $(DIR_INCLUDE)
+
+# all: $(NAME)
+
+# $(NAME): $(OBJS)
+# 	ar rc $@ $(addprefix $(DIR_BIN), $<)
+
+# $(OBJS):%.o:%.c $(HEADERS)
+
+# echo:
+# 	echo $(OBJS)
