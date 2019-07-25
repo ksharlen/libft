@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/25 13:53:13 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/25 14:09:14 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,9 +132,6 @@ $(OBJS):%.o: %.c $(HEADERS) | $(DIR_BIN)
 $(DIR_BIN):
 	mkdir -p $@
 
-echo:
-	@echo $(OBJS)
-
 clean:
 	$(REMOVE) $(OBJS)
 	$(REMOVE) $(DIR_BIN)
@@ -143,3 +140,5 @@ fclean: clean
 	$(REMOVE) $(NAME)
 
 re: fclean all
+
+.SILENT: clean fclean re
