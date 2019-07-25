@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/24 23:22:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/25 14:10:24 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <assert.h>
+# include "ft_printf.h"
 
 # define MAXLONG 9223372036854775807
 # define FD_MAX 7198
@@ -27,7 +28,7 @@
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
 # define CHECK_MOD(x)		((x) > 0) ? (x) : -(x)
 # define SET_BIT(val, num)	((val) = ((val) | (1 << (num))))
-# define NUM_CMP(a, b) ((((a) ^ (b)) == 0) ? 0 : 1)
+# define NUM_CMP(a, b) 		((((a) ^ (b)) == 0) ? 0 : 1)
 
 typedef struct		s_list
 {
