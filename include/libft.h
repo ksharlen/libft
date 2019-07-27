@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/25 14:10:24 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/27 22:41:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <fcntl.h>
 # include <assert.h>
 # include "ft_printf.h"
+# include "ft_getopt.h"
 
 # define MAXLONG 9223372036854775807
 # define FD_MAX 7198
