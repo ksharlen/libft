@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/27 22:42:13 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/27 22:47:51 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,7 +108,7 @@ SRC_LIBFT := ft_arrfind.c\
 				ft_bitscpy.c\
 				ft_wcslen.c\
 				ft_ustrdel.c\
-				ft_getopt.c
+				ft_skipfirst.c
 
 SRCS := $(SRC_LIBFT) $(SRCS_FT_PRINTF)
 

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/27 22:41:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/27 22:48:14 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,5 +128,6 @@ unsigned			ft_set_bits(unsigned val, unsigned bits, unsigned num);
 unsigned			ft_bitscpy(unsigned value, unsigned inval, unsigned num);
 size_t				ft_wcslen(const wchar_t *str);
 void				ft_ustrdel(unsigned char **str);
+char				*ft_skipfirst(char *str, int sym);
 
 #endif
