@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 18:12:12 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/27 22:44:41 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/08/05 11:27:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static char			check_opt(const char argv, const char *stringopt)
 		return (0);
 }
 
-int					ft_getopt_internal(int argc, char *const argv[], const char *stringopt)
+int					ft_getopt_internal(int argc,
+char *const argv[], const char *stringopt)
 {
 	static t_opt	opt;
 
@@ -44,7 +45,8 @@ int					ft_getopt_internal(int argc, char *const argv[], const char *stringopt)
 	return (-1);
 }
 
-static int			check_opt_on_val(const char *stringopt, int opt, char *const argv[], int argc)
+static int			check_opt_on_val(const char *stringopt,
+int opt, char *const argv[], int argc)
 {
 	static	int		flag;
 	int				index;
@@ -69,7 +71,8 @@ static int			check_opt_on_val(const char *stringopt, int opt, char *const argv[]
 	return (opt);
 }
 
-int					ft_getopt(int argc, char *const argv[], const char *stringopt)
+int					ft_getopt(int argc,
+char *const argv[], const char *stringopt)
 {
 	int				opt;
 	char			*p_stringopt;
