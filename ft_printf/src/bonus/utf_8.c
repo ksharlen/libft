@@ -6,19 +6,19 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 09:35:12 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/21 10:25:53 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/08/12 12:20:11 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static unsigned			set_mask_10(unsigned val, unsigned bytes)
+static unsigned			set_mask_10(unsigned val, unsigned t_bytes)
 {
-	--bytes;
-	while (bytes)
+	--t_bytes;
+	while (t_bytes)
 	{
-		SET_BIT(val, (bytes * 8) - 1);
-		bytes--;
+		SET_BIT(val, (t_bytes * 8) - 1);
+		t_bytes--;
 	}
 	return (val);
 }
@@ -36,19 +36,19 @@ static unsigned char	get_6_bits(unsigned unicode)
 t_utf					push_unicode(t_utf utf)
 {
 	int					index;
-	unsigned			bytes;
+	unsigned			t_bytes;
 
-	bytes = utf.bytes;
+	t_bytes = utf.t_bytes;
 	index = 0;
-	if (bytes > 1)
+	if (t_bytes > 1)
 	{
-		while (bytes)
+		while (t_bytes)
 		{
 			utf.utf_sym = ft_bitscpy(utf.utf_sym,\
 			get_6_bits(utf.unicode), index);
 			utf.unicode >>= 6;
 			index += 8;
-			--bytes;
+			--t_bytes;
 		}
 	}
 	else
@@ -56,20 +56,20 @@ t_utf					push_unicode(t_utf utf)
 	return (utf);
 }
 
-unsigned				def_num_bytes(wchar_t unicode)
+unsigned				def_num_t_bytes(wchar_t unicode)
 {
-	unsigned			bytes;
+	unsigned			t_bytes;
 
-	bytes = 0;
+	t_bytes = 0;
 	if (unicode >= 0 && unicode < 128)
-		bytes = 1;
+		t_bytes = 1;
 	else if (unicode >= 128 && unicode < 2048)
-		bytes = 2;
+		t_bytes = 2;
 	else if (unicode >= 2048 && unicode < 65536)
-		bytes = 3;
+		t_bytes = 3;
 	else if (unicode >= 65536 && unicode < 1114112)
-		bytes = 4;
-	return (bytes);
+		t_bytes = 4;
+	return (t_bytes);
 }
 
 unsigned				inst_mask(t_utf utf)
@@ -78,12 +78,12 @@ unsigned				inst_mask(t_utf utf)
 
 	mask = 0;
 	utf.utf_sym = 0;
-	if (utf.bytes > 1)
+	if (utf.t_bytes > 1)
 	{
-		mask = ft_set_bits(mask, utf.bytes, utf.bytes - 1);
+		mask = ft_set_bits(mask, utf.t_bytes, utf.t_bytes - 1);
 		utf.utf_sym = ft_bitscpy(utf.utf_sym, mask,\
-			(utf.bytes * 8) - utf.bytes);
-		utf.utf_sym = set_mask_10(utf.utf_sym, utf.bytes);
+			(utf.t_bytes * 8) - utf.t_bytes);
+		utf.utf_sym = set_mask_10(utf.utf_sym, utf.t_bytes);
 	}
 	return (utf.utf_sym);
 }

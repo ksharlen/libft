@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   char_to_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 13:05:27 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/22 12:33:08 by cormund          ###   ########.fr       */
+/*   Updated: 2019/08/12 12:20:11 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void				char_to_str(va_list format)
 	else
 	{
 		utf.utf_sym = (unsigned char)va_arg(format, int);
-		utf.bytes = 1;
+		utf.t_bytes = 1;
 	}
 	push_buf(utf);
 }

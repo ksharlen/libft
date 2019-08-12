@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 13:57:51 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/21 16:03:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/08/12 12:20:11 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	byte_shift;
+	size_t	t_byte_shift;
 	void	*p_str;
 	short	flag_find;
 
 	flag_find = 0;
-	byte_shift = 0;
-	while (byte_shift < n)
+	t_byte_shift = 0;
+	while (t_byte_shift < n)
 	{
-		if (*((unsigned char *)s + byte_shift) == (unsigned char)c)
+		if (*((unsigned char *)s + t_byte_shift) == (unsigned char)c)
 		{
-			p_str = ((unsigned char *)s + byte_shift);
-			byte_shift = n;
+			p_str = ((unsigned char *)s + t_byte_shift);
+			t_byte_shift = n;
 			flag_find = 1;
 		}
 		else
-			++byte_shift;
+			++t_byte_shift;
 	}
 	if (!flag_find)
 		return (NULL);

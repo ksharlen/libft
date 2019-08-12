@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 18:57:24 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/24 16:06:31 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/08/12 12:20:11 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_utf				convert_sym_utf8(wchar_t sym)
 {
 	t_utf			utf;
 
-	utf.bytes = def_num_bytes(sym);
+	utf.t_bytes = def_num_t_bytes(sym);
 	utf.unicode = sym;
 	utf.utf_sym = inst_mask(utf);
 	utf = push_unicode(utf);
@@ -27,17 +27,17 @@ unsigned char		*push_wchar_in_char(t_utf utf, unsigned char *str)
 {
 	unsigned char sym;
 
-	while (utf.bytes)
+	while (utf.t_bytes)
 	{
-		sym = (utf.utf_sym >> (8 * (utf.bytes - 1)));
+		sym = (utf.utf_sym >> (8 * (utf.t_bytes - 1)));
 		*str = sym;
 		str++;
-		--utf.bytes;
+		--utf.t_bytes;
 	}
 	return (str);
 }
 
-static size_t		bytelen(wchar_t *str)
+static size_t		t_bytelen(wchar_t *str)
 {
 	size_t			len;
 
@@ -46,7 +46,7 @@ static size_t		bytelen(wchar_t *str)
 	{
 		while (*str)
 		{
-			len += def_num_bytes(*str);
+			len += def_num_t_bytes(*str);
 			str++;
 		}
 	}
@@ -62,7 +62,7 @@ unsigned char		*convert_utf8(wchar_t *str, size_t len_utf8)
 	unsigned char	*p_ret_str;
 
 	index = 0;
-	len = bytelen(str);
+	len = t_bytelen(str);
 	if (!(ret_str = (unsigned char *)ft_memalloc(len + 1)))
 		exit(0);
 	p_ret_str = ret_str;
@@ -80,11 +80,11 @@ unsigned char		*push_wchar_to_buf(t_utf utf)
 	unsigned char	*buf;
 	unsigned char	inbuf;
 
-	while (utf.bytes)
+	while (utf.t_bytes)
 	{
-		inbuf = (utf.utf_sym >> (8 * (utf.bytes - 1)));
+		inbuf = (utf.utf_sym >> (8 * (utf.t_bytes - 1)));
 		buf = work_buf(&inbuf, 1);
-		--utf.bytes;
+		--utf.t_bytes;
 	}
 	return (buf);
 }

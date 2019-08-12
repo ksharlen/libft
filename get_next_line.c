@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 16:31:21 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/05/30 08:21:53 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/08/12 12:20:11 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int			ft_line_fill(char **line, t_list *elem)
 
 static ssize_t		ft_read_write(t_list *elem)
 {
-	ssize_t			byte_read;
+	ssize_t			t_byte_read;
 	char			*buf;
 	void			*tmp;
 
@@ -61,18 +61,18 @@ static ssize_t		ft_read_write(t_list *elem)
 	buf = ft_memalloc(BUFF_SIZE);
 	if (buf)
 	{
-		byte_read = read(*(int *)elem->content, buf, BUFF_SIZE);
-		if (!byte_read || byte_read == -1)
+		t_byte_read = read(*(int *)elem->content, buf, BUFF_SIZE);
+		if (!t_byte_read || t_byte_read == -1)
 		{
 			ft_strdel(&buf);
-			return (byte_read ? -1 : 0);
+			return (t_byte_read ? -1 : 0);
 		}
 		tmp = elem->content;
-		elem->content = ft_memnjoin(tmp, buf, elem->content_size, byte_read);
-		elem->content_size += byte_read;
+		elem->content = ft_memnjoin(tmp, buf, elem->content_size, t_byte_read);
+		elem->content_size += t_byte_read;
 		ft_memdel(&tmp);
 		ft_strdel(&buf);
-		return (elem->content ? byte_read : -1);
+		return (elem->content ? t_byte_read : -1);
 	}
 	return (-1);
 }
@@ -80,15 +80,15 @@ static ssize_t		ft_read_write(t_list *elem)
 static int			ft_build_line(t_list *elem, char **line)
 {
 	char			*back_n;
-	ssize_t			byte_read;
+	ssize_t			t_byte_read;
 
-	byte_read = -2;
+	t_byte_read = -2;
 	while (1)
 	{
 		if ((back_n = ft_memchr(elem->content + 4, '\n',
 		elem->content_size - 4)))
 			return (ft_line_fill(line, elem));
-		else if (!byte_read)
+		else if (!t_byte_read)
 		{
 			if (elem->content_size <= 4)
 				return (0);
@@ -98,8 +98,8 @@ static int			ft_build_line(t_list *elem, char **line)
 		}
 		else
 		{
-			byte_read = ft_read_write(elem);
-			if (byte_read == -1)
+			t_byte_read = ft_read_write(elem);
+			if (t_byte_read == -1)
 				return (-1);
 		}
 	}
