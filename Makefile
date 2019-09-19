@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/09/16 07:46:28 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/09/19 22:36:08 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -146,4 +146,5 @@ fclean: clean
 
 re: fclean all
 
-.SILENT: clean fclean re
+.PHONY:	clean fclean re
+.SILENT: all $(NAME) $(OBJS) $(DIR_BIN) clean fclean re
