@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/16 07:46:56 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/09/22 18:31:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # define CHECK_MOD(x)		((x) > 0) ? (x) : -(x)
 # define SET_BIT(val, num)	((val) = ((val) | (1 << (num))))
 # define NUM_CMP(a, b) 		((((a) ^ (b)) == 0) ? 0 : 1)
+# define P_UNUSED(x) (void)(x)
 
 typedef struct		s_list
 {
