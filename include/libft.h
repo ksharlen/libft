@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/22 19:33:24 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/09/23 14:50:00 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,5 +134,8 @@ char				*ft_skipfirst(char *str, int sym);
 int					ft_strcasecmp(const char *s1, const char *s2);
 char				*ft_setncat(char *str, int sym, size_t size);
 char				*ft_strsetalloc(const char sym, size_t size);
+char				*ft_skipnv_sym(const char *str);
+char				*ft_strskipinv_sym(const char *str, char sym);
+char				*ft_skip_word_sym(const char *str, char sym);
 
 #endif

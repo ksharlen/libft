@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/09/20 18:54:30 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/09/23 14:48:05 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -112,7 +112,10 @@ SRC_LIBFT 		:= ft_arrfind.c\
 						ft_getopt.c\
 						ft_strcasecmp.c\
 						ft_setncat.c\
-						ft_strsetalloc.c
+						ft_strsetalloc.c\
+						ft_skipinv_sym.c\
+						ft_strskipinv_sym.c\
+						ft_skip_word_sym.c
 
 SRCS 			:= $(SRC_LIBFT) $(SRCS_FT_PRINTF)
 
