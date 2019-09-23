@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/09/23 16:34:02 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/09/23 19:41:02 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -117,7 +117,10 @@ SRC_LIBFT 		:= ft_arrfind.c\
 						ft_strskipinv_sym.c\
 						ft_skip_word_sym.c\
 						ft_skiptabs.c\
-						ft_skip_before.c
+						ft_skip_before.c\
+						ft_skiptabs_sym.c\
+						ft_strmoveptr_end.c\
+						ft_strsplit_skip_space.c
 
 SRCS 			:= $(SRC_LIBFT) $(SRCS_FT_PRINTF)
 
