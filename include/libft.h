@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/23 14:54:53 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/09/23 16:34:14 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define FD_MAX 7198
 # define BUFF_SIZE 20
 
+# define TABS(x)			((x) == '\t' || (x) == '\n' || (x) == '\v' || (x) == '\f' || (x) == '\r' || (x) == ' ')
 # define FIRST_SYM			0
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
 # define CHECK_MOD(x)		((x) > 0) ? (x) : -(x)
@@ -137,5 +138,7 @@ char				*ft_strsetalloc(const char sym, size_t size);
 char				*ft_skipnv_sym(const char *str);
 char				*ft_strskipinv_sym(const char *str, char sym);
 char				*ft_skip_word_sym(const char *str, char sym);
+char				*ft_skiptabs(const char *str);
+char				*ft_skip_before(const char *str, char sym);
 
 #endif
