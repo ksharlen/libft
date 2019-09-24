@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/23 19:40:48 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/09/24 15:33:49 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,5 +143,6 @@ char				*ft_skip_before(const char *str, char sym);
 char				*ft_skiptabs_sym(const char *str, char sym);
 char				*ft_strmoveptr_end(const char *str, char sym);
 char				**ft_strsplit_skip_space(char *str, char sym);
+void				ft_print_lines(char *const str[]);
 
 #endif

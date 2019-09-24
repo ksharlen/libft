@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strskipinv_sym.c                                :+:      :+:    :+:   */
+/*   ft_print_lines.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/23 14:25:38 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/24 15:35:14 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/09/24 15:31:10 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/09/24 15:31:58 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strskipinv_sym(const char *str, char sym)
+void	ft_print_lines(char *const str[])
 {
-	if (str && *str)
+	if (str)
 	{
-		while (*str && (*str < 33 || *str == sym))
+		while (*str)
+		{
+			ft_printf("%s\n", *str);
 			++str;
-		return ((char *)str);
+		}
 	}
-	return (NULL);
 }
