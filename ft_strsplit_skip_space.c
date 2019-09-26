@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 19:39:51 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/24 15:24:21 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/09/26 17:23:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static char		*ft_alloc_before(char **str, char sym)
 		end_spaces = ft_num_space_end(*str, sym);
 		len -= end_spaces;
 		ret_str = (char *)ft_strnew(sizeof(char) * len);
-		ft_strncat(ret_str, *str, len);
+		ft_memcpy(ret_str, *str, len);
 		(*str) = *(str) + len;
 		*str = ft_skipfirst(*str, sym);
 	}
@@ -73,7 +73,7 @@ static void		push_str(char *str, char *str_ret[], size_t size_str, char sym)
 	size_t		i;
 
 	i = 0;
-	while (i < size_str - 1)
+	while (i < (size_str - 1))
 	{
 		str = ft_skiptabs_sym(str, sym);
 		str_ret[i] = ft_alloc_before(&str, sym);
