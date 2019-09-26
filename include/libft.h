@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/25 22:49:41 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/09/26 19:38:45 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@
 # define SET_BIT(val, num)	((val) = ((val) | (1 << (num))))
 # define NUM_CMP(a, b) 		((((a) ^ (b)) == 0) ? 0 : 1)
 # define P_UNUSED(x)		(void)(x)
+
+# define FLAG_ON			1
+# define FLAG_OFF			0
 
 typedef struct		s_list
 {
@@ -105,7 +108,7 @@ int					ft_isspace(int c);
 ssize_t				ft_pow(int n, int level);
 int					ft_revers(int n);
 void				ft_lstadd_end(t_list **begin_list, t_list *elem);
-int					get_next_line(const int fd, char **line);
+int					get_next_line(const int fd, char **line, char signal);
 void				ft_lstfreeone(void *content, size_t content_size);
 t_list				*ft_lstelem(t_list *begin_list,
 	size_t index, size_t lst_size);

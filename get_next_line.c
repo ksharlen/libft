@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 16:31:21 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/20 18:53:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/09/26 18:09:48 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,11 +105,16 @@ static int			ft_build_line(t_list *elem, char **line)
 	}
 }
 
-int					get_next_line(const int fd, char **line)
+int					get_next_line(const int fd, char **line, char signal)
 {
 	static t_list	*beg;
 	t_list			*tmp;
 
+	if (signal)
+	{
+		ft_lstdel(&beg, ft_lstfreeone);
+		return (0);
+	}
 	if (fd >= 0 && fd < FD_MAX && BUFF_SIZE > 0 && line)
 	{
 		if (!(tmp = ft_find_fd_to_lst(beg, fd)))
