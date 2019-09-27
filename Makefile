@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/09/25 22:49:04 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/09/27 17:40:52 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -123,7 +123,8 @@ SRC_LIBFT 		:= ft_arrfind.c\
 						ft_strsplit_skip_space.c\
 						ft_print_lines.c\
 						ft_lineslen.c\
-						ft_strdel_split.c
+						ft_strdel_split.c\
+						ft_stroneof.c
 
 SRCS 			:= $(SRC_LIBFT) $(SRCS_FT_PRINTF)
 
