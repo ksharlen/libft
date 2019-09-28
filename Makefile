@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/09/27 17:40:52 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/09/29 00:19:20 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -124,7 +124,10 @@ SRC_LIBFT 		:= ft_arrfind.c\
 						ft_print_lines.c\
 						ft_lineslen.c\
 						ft_strdel_split.c\
-						ft_stroneof.c
+						ft_stroneof.c\
+						ft_read_file.c\
+						ft_push_to_file_name_val.c\
+						ft_get_name_val_in_file.c
 
 SRCS 			:= $(SRC_LIBFT) $(SRCS_FT_PRINTF)
 
