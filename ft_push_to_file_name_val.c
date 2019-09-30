@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 20:59:17 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/29 00:20:15 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/09/30 13:21:22 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	push_to_file(char **file_split, const char *path_name)
 {
-	char 	**p_file_split;
+	char	**p_file_split;
 	size_t	len_str;
 	int		fd;
 
@@ -31,20 +31,23 @@ static void	push_to_file(char **file_split, const char *path_name)
 	close(fd);
 }
 
-static char	*push_new_value(char *parsed_string, const char *value, const size_t len_name)
+static char	*push_new_value(char *parsed_string, const char *value,
+	const size_t len_name)
 {
 	char	*tmp;
 	char	*new_name_value;
 
 	tmp = parsed_string;
-	new_name_value = (char *)ft_memalloc(sizeof(char) * (len_name + ft_strlen(value) + 1)); //'\n'
+	new_name_value = (char *)ft_memalloc(sizeof(char) *
+		(len_name + ft_strlen(value) + 1));
 	ft_memcpy(new_name_value, parsed_string, len_name);
 	ft_strcat(new_name_value, value);
 	ft_strdel(&tmp);
 	return (new_name_value);
 }
 
-static void	swap_value(char **parsed_string, const char *name, const char *value)
+static void	swap_value(char **parsed_string,
+	const char *name, const char *value)
 {
 	char	**p_parsed_string;
 	size_t	len_name;
@@ -53,18 +56,21 @@ static void	swap_value(char **parsed_string, const char *name, const char *value
 	len_name = ft_strlen(name);
 	while (*p_parsed_string)
 	{
-		if (!ft_memcmp(*p_parsed_string, name, len_name) && (*(*(p_parsed_string) + len_name) == '='))
+		if (!ft_memcmp(*p_parsed_string, name, len_name) &&
+			(*(*(p_parsed_string) + len_name) == '='))
 		{
-			*p_parsed_string = push_new_value(*p_parsed_string, value, len_name + 1);	//1 - '='
+			*p_parsed_string = push_new_value(*p_parsed_string,
+				value, len_name + 1);
 			break ;
 		}
 		++p_parsed_string;
 	}
 }
 
-char	**parse_read(const char *need_parse, const char *name, const char *value)
+char		**parse_read(const char *need_parse,
+	const char *name, const char *value)
 {
-	char **parsed_string;
+	char	**parsed_string;
 
 	if (need_parse && name && value && *need_parse && *name && *value)
 	{
@@ -77,10 +83,10 @@ char	**parse_read(const char *need_parse, const char *name, const char *value)
 	return (NULL);
 }
 
-
-int		W_FVAL(const char *path_name, const char *name, const char *value)
+int			change_the_value_by_name_in_file(const char *path_name,
+	const char *name, const char *value)
 {
-	char 		*file_content;
+	char		*file_content;
 	char		**file_split;
 	enum e_rw	rw;
 

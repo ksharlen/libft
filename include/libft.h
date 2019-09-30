@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/29 00:21:41 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/09/30 14:52:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include <sys/types.h>
 # include <assert.h>
+# include <errno.h>
 # include "ft_printf.h"
 # include "ft_getopt.h"
 
@@ -29,7 +31,8 @@
 /*
 **OTHER
 */
-# define TABS(x)			((x) == '\t' || (x) == '\n' || (x) == '\v' || (x) == '\f' || (x) == '\r' || (x) == ' ')
+# define TABS_SYM(x) (((x) == '\t') || ((x) == ' '))
+# define TABS(x) ((x) == '\n' || (x) == '\v' || (x) == '\f' || (x) == '\r' || TABS_SYM(x))
 # define FIRST_SYM			0
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
 # define CHECK_MOD(x)		((x) > 0) ? (x) : -(x)
@@ -47,7 +50,9 @@
 # define SPLIT_SYM	'\n'
 # define R_FVAL	get_name_value
 # define W_FVAL change_the_value_by_name_in_file
+# define WEND_FVAL ft_push_end_file
 # define NO_SUCH(filename) ft_printf("%s: %s", ESUCH, filename)
+# define S_RWSUPER 600
 
 typedef struct	s_list
 {
@@ -170,10 +175,13 @@ void			ft_strdel_split(char **del);
 char			*ft_stroneof(const char *str, const char *find);
 
 /*
-**RW_FVAL
+**FILE
 */
 char			*read_file_all(const char *path_name);
-char			*R_FVAL(const char *path_name, const char *name);
-int				W_FVAL(const char *path_name, const char *name, const char *value);
+char			*get_name_value(const char *path_name, const char *name);
+int				change_the_value_by_name_in_file(const char *path_name,
+	const char *name, const char *value);
+int				ft_push_end_file(const char *path_name, const char *data);
+int				ft_set_next_line(const char *path_name, const char *data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 19:37:36 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/29 00:20:21 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/09/30 13:22:09 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 static char		*read_file(int fd, size_t size_file_content)
 {
-	char 	*file_content;
-	ssize_t	ret_read;
+	char	*file_content;
 
 	file_content = ft_strnew(sizeof(char) * size_file_content);
 	if (!file_content)
 		return (NULL);
-	ret_read = read(fd, file_content, size_file_content);
+	read(fd, file_content, size_file_content);
 	return (file_content);
 }
 
@@ -37,7 +36,7 @@ static size_t	lenfile_content(int fd)
 	return (size_file_content);
 }
 
-char	*read_file_all(const char *path_name)
+char			*read_file_all(const char *path_name)
 {
 	size_t	size_file_content;
 	char	*file_content;

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stroneof.c                                      :+:      :+:    :+:   */
+/*   ft_set_next_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 17:38:10 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/30 13:14:13 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/09/30 14:47:00 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/09/30 14:53:36 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_stroneof(const char *str, const char *find)
+static int	ft_push_next_line(const char *path_name,
+	const char *data, size_t len_data)
 {
-	const char *p_find;
+	char	line[len_data + 1];
 
-	if (str && find && *find && *str)
-	{
-		p_find = find;
-		while (*str)
-		{
-			if ((p_find = ft_strchr(find, *str)))
-				return ((char *)str);
-			++str;
-		}
-	}
-	return (NULL);
+	ft_bzero(line, len_data + 1);
+	ft_strcpy(line, data);
+	ft_strcat(line, "\n");
+	return (ft_push_end_file(path_name, line));
+}
+
+int			ft_set_next_line(const char *path_name, const char *data)
+{
+	size_t len_data;
+
+	len_data = ft_strlen(data);
+	return (ft_push_next_line(path_name, data, len_data));
 }
