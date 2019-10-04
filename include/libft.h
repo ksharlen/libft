@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/04 15:47:35 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/04 16:00:47 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,9 +173,7 @@ void			ft_print_lines(char *const str[]);
 size_t			ft_lineslen(char *const lines[]);
 void			ft_strdel_split(char **del);
 char			*ft_stroneof(const char *str, const char *find);
-char			*ft_strlcpy(char *dst, char *src);
 char			*ft_strscat(char *dst, char *src, const char sym);
-char			*ft_strlncpy(char *dst, char *src, size_t n);
 
 /*
 **FILE
