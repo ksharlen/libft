@@ -6,20 +6,25 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 15:31:10 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/28 14:55:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/06 14:52:09 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print_lines(char *const str[])
+size_t	ft_print_lines(char *const str[])
 {
+	size_t size_arr;
+
+	size_arr = 0;
 	if (str)
 	{
 		while (*str)
 		{
 			ft_printf("%s\n", *str);
 			++str;
+			++size_arr;
 		}
 	}
+	return (size_arr);
 }
