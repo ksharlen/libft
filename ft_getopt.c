@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 18:12:12 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/08/05 11:27:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/06 20:01:24 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,21 @@
 
 static char			check_opt(const char argv, const char *stringopt)
 {
+	char ch;
+
+	// ch = NULL;
 	if (argv)
-		return (ft_strchr(stringopt, argv) ? argv : '?');
+	{
+		// ch = (ft_strchr(stringopt, argv)) ? argv : "?";
+		ch = *ft_strchr(stringopt, argv);
+		if (ch)
+			return (ch);
+		else
+		{
+			ft_printf("illegal option --%c\n", ch);
+			return (-1);
+		}
+	}
 	else
 		return (0);
 }
@@ -31,6 +44,8 @@ char *const argv[], const char *stringopt)
 		{
 			++opt.jindex;
 			opt.opt = check_opt(argv[opt.index][opt.jindex], stringopt);
+			if (opt.opt == -1)
+				return (-1);
 			if (!opt.opt)
 				continue;
 			return (opt.opt);
@@ -85,6 +100,8 @@ char *const argv[], const char *stringopt)
 		opt = ft_getopt_internal(argc, argv, stringopt);
 		if (opt != -1 && opt != '?')
 			opt = check_opt_on_val(p_stringopt, opt, argv, argc);
+		else if (opt == -1)
+			return ('?');
 	}
 	return (opt);
 }

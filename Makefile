@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/10/04 16:00:54 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/10/08 16:25:58 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -131,6 +131,10 @@ SRC_LIBFT 		:= ft_arrfind.c\
 						ft_push_end_file.c\
 						ft_set_next_line.c\
 						ft_strscat.c\
+						ft_linedup.c\
+						ft_strtabchr.c\
+						ft_strtablen.c\
+						ft_strtabdup.c
 
 SRCS 			:= $(SRC_LIBFT) $(SRCS_FT_PRINTF)
 

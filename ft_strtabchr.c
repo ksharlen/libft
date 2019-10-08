@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_lines.c                                   :+:      :+:    :+:   */
+/*   ft_strtabchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/24 15:31:10 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/06 23:33:03 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/10/08 15:55:55 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/10/08 16:00:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_print_lines(char *const str[])
+char	*ft_strtabchr(const char *str, const char sym)
 {
-	size_t size_arr;
+	char	*p_str;
 
-	size_arr = 0;
+	p_str = NULL;
 	if (str && *str)
 	{
-		while (*str)
+		while (str && *str && !TABS(*str))
 		{
-			ft_printf("%s\n", *str);
+			if (*str == sym)
+			{
+				p_str = (char *)str;
+				break ;
+			}
 			++str;
-			++size_arr;
 		}
 	}
-	return (size_arr);
+	return (p_str);
 }

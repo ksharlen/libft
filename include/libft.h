@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/06 14:52:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/08 16:26:14 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,11 +169,16 @@ char			*ft_skip_before(const char *str, char sym);
 char			*ft_skiptabs_sym(const char *str, char sym);
 char			*ft_strmoveptr_end(const char *str, char sym);
 char			**ft_strsplit_skip_space(char *str, char sym);
-size_t			ft_print_lines(char *const str[]);
-size_t			ft_lineslen(char *const lines[]);
 void			ft_strdel_split(char **del);
 char			*ft_stroneof(const char *str, const char *find);
 char			*ft_strscat(char *dst, char *src, const char sym);
+
+/*
+**BERORE_TAB
+*/
+char			*ft_strtabchr(const char *str, const char sym);
+size_t			ft_strtablen(const char *str);
+char			*ft_strtabdup(const char *str);
 
 /*
 **FILE
@@ -184,5 +189,12 @@ int				change_the_value_by_name_in_file(const char *path_name,
 	const char *name, const char *value);
 int				ft_push_end_file(const char *path_name, const char *data);
 int				ft_set_next_line(const char *path_name, const char *data);
+
+/*
+**line
+*/
+size_t			ft_lineslen(char *const lines[]);
+size_t			ft_print_lines(char *const str[]);
+char			**ft_linedup(char *const *line);
 
 #endif

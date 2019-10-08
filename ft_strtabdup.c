@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_lines.c                                   :+:      :+:    :+:   */
+/*   ft_strtabdup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/24 15:31:10 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/06 23:33:03 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/10/08 16:12:12 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/10/08 16:27:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_print_lines(char *const str[])
+char	*ft_strtabdup(const char *str)
 {
-	size_t size_arr;
+	size_t	len_str;
+	char	*new_str;
 
-	size_arr = 0;
+	new_str = NULL;
 	if (str && *str)
 	{
-		while (*str)
-		{
-			ft_printf("%s\n", *str);
-			++str;
-			++size_arr;
-		}
+		len_str = ft_strtablen(str);
+		new_str = ft_strnew(len_str);
+		ft_memcpy(new_str, str, len_str);
 	}
-	return (size_arr);
+	return (new_str);
 }

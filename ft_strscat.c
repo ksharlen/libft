@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/04 15:38:48 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/04 16:06:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/08 18:02:20 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strscat(char *dst, char *src, const char sym)
 	size_t	before_sym;
 
 	p_dst = NULL;
-	if (dst && src && sym >= 0)
+	if (dst && src && *src && sym >= 0)
 	{
 		before_sym = ft_strnlen(src, sym);
 		p_dst = src;
