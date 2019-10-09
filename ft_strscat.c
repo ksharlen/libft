@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/04 15:38:48 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/08 18:02:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/08 20:12:10 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ char	*ft_strscat(char *dst, char *src, const char sym)
 		while (*dst)
 			++dst;
 		ft_strncpy(dst, src, before_sym);
-		p_dst += (before_sym + 1);
+		if (ft_strchr(src, sym))
+			p_dst += (before_sym + 1);
+		else
+			p_dst += before_sym;
 	}
 	return (p_dst);
 }
