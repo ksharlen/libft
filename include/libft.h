@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/13 20:54:58 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/13 21:03:25 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 # define VT(x) ((x) == '\v')
 # define NP(x) ((x) == '\f')
 # define RK(x) ((x) == '\r')
-# define TABS(x) (SP(x) || NL(x) || TV(x) || VT(x) || NP(x) || RK(x))
+# define TABS(x) (SP(x) || NL(x) || TB(x) || VT(x) || NP(x) || RK(x))
 
 # define FIRST_SYM			0
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
