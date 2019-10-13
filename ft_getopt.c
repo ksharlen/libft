@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 18:12:12 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/06 20:01:24 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/13 20:57:13 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ static char			check_opt(const char argv, const char *stringopt)
 {
 	char ch;
 
-	// ch = NULL;
 	if (argv)
 	{
-		// ch = (ft_strchr(stringopt, argv)) ? argv : "?";
 		ch = *ft_strchr(stringopt, argv);
 		if (ch)
 			return (ch);

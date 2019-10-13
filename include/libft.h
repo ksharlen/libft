@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/08 16:26:14 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/13 20:54:58 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,14 @@
 /*
 **OTHER
 */
-# define TABS_SYM(x) (((x) == '\t') || ((x) == ' '))
-# define TABS(x) ((x) == '\n' || (x) == '\v' || (x) == '\f' || (x) == '\r' || TABS_SYM(x))
+# define SP(x) ((x) == ' ')
+# define NL(x) ((x) == '\n')
+# define TB(x) ((x) == '\t')
+# define VT(x) ((x) == '\v')
+# define NP(x) ((x) == '\f')
+# define RK(x) ((x) == '\r')
+# define TABS(x) (SP(x) || NL(x) || TV(x) || VT(x) || NP(x) || RK(x))
+
 # define FIRST_SYM			0
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
 # define CHECK_MOD(x)		((x) > 0) ? (x) : -(x)
@@ -46,11 +52,11 @@
 /*
 **rwfile
 */
-# define ESUCH "no such file"
-# define SPLIT_SYM	'\n'
-# define R_FVAL	get_name_value
-# define W_FVAL change_the_value_by_name_in_file
-# define WEND_FVAL ft_push_end_file
+# define ESUCH 				"no such file"
+# define SPLIT_SYM			'\n'
+# define R_FVAL				get_name_value
+# define W_FVAL 			change_the_value_by_name_in_file
+# define WEND_FVAL			ft_push_end_file
 # define NO_SUCH(filename) ft_printf("%s: %s", ESUCH, filename)
 # define S_RWSUPER 600
 
