@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/15 18:52:53 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/16 01:02:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -256,5 +256,10 @@ char			**ft_linedup(char *const *line);
 */
 void			ft_err_str(t_error nerror, const char *add_text);
 void			ft_err_exit(t_error nerror, const char *add_text);
+
+/*
+**NEW_FUN
+*/
+int				ft_atoi_base(const char *str, const int base);
 
 #endif
