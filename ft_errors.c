@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 16:46:28 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/15 18:45:41 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/15 19:13:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ void	ft_err_str(t_error nerror, const char *add_text)
 
 void	ft_err_exit(t_error nerror, const char *add_text)
 {
-	err_str(nerror, add_text);
+	ft_err_str(nerror, add_text);
 	exit(EXIT_FAILURE);
 }
