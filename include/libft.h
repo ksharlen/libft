@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/16 20:45:03 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/17 18:35:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,9 @@
 # define E_LSTAT	18
 # define E_GETPWUID	19
 
+# define CHK_SYS_ERR_EXT(val, err, name) if ((val) == F) ft_err_exit(err, name)
+# define CHK_NULL_PTR(ptr, err, name) if (!(ptr)) ft_err_exit(err, name)
+
 typedef int8_t	t_error;
 
 typedef struct	s_list
@@ -104,6 +107,12 @@ enum			e_err
 {
 	FAILURE = -1,
 	SUCCESS
+};
+
+enum			e_simp
+{
+	F = FAILURE,
+	S = SUCCESS
 };
 
 /*
