@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/17 22:30:16 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/18 23:50:58 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@
 # include <errno.h>
 # include "ft_printf.h"
 # include "ft_getopt.h"
+
+# ifndef NULL
+#  define NULL ((void *)0)
+# endif
 
 # define MAXLONG 			9223372036854775807
 # define FD_MAX				7198
