@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/10/16 20:44:36 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/10/17 19:41:03 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -137,7 +137,8 @@ SRC_LIBFT 		:= ft_arrfind.c\
 						ft_strtabdup.c\
 						ft_errors.c\
 						ft_atoi_base.c\
-						ft_num_words.c
+						ft_num_words.c\
+						ft_atoi_base_ptr.c
 
 SRCS 			:= $(SRC_LIBFT) $(SRCS_FT_PRINTF)
 

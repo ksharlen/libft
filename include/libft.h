@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/17 18:35:15 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/17 22:30:16 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@
 # define NP(x) ((x) == '\f')
 # define RK(x) ((x) == '\r')
 # define TABS(x) (SP(x) || NL(x) || TB(x) || VT(x) || NP(x) || RK(x))
+
+# define DECIMAL	10
 
 # define FIRST_SYM			0
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
@@ -270,6 +272,7 @@ void			ft_err_exit(t_error nerror, const char *add_text);
 **NEW_FUN
 */
 int				ft_atoi_base(const char *str, const int base);
+int				ft_atoi_base_ptr(const char *str, const int base, char **ptr);
 size_t			ft_num_words(const char *str, const char *entry_sym);
 
 #endif
