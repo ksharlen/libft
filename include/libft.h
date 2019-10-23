@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/18 23:50:58 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/19 17:56:21 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@
 
 # define DECIMAL	10
 
+# define FT_ABS(x) ((x) > 0 ? (x) : -(x))
 # define FIRST_SYM			0
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
 # define CHECK_MOD(x)		((x) > 0) ? (x) : -(x)
