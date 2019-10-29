@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 19:33:38 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/17 19:42:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/29 22:05:35 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ const char			*skip_mask(const char *str, const int base)
 	return (str);
 }
 
-int					ft_atoi_base_ptr(const char *str, const int base, char **ptr)
+int					ft_atoi_base_ptr(const char *str,
+	const int base, char **ptr)
 {
 	int	result;
 	int	sign;
