@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/19 17:56:21 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/10/30 17:10:14 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@
 # define CHK_NULL_PTR(ptr, err, name) if (!(ptr)) ft_err_exit(err, name)
 
 typedef int8_t	t_error;
+typedef	int8_t	t_byte;
+# define BYTE t_byte
 
 typedef struct	s_list
 {
@@ -279,5 +281,6 @@ void			ft_err_exit(t_error nerror, const char *add_text);
 int				ft_atoi_base(const char *str, const int base);
 int				ft_atoi_base_ptr(const char *str, const int base, char **ptr);
 size_t			ft_num_words(const char *str, const char *entry_sym);
+void			*ft_memdup(void *content, size_t len_content);
 
 #endif
