@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 19:33:38 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/29 22:05:35 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/11/11 18:19:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static const char	*getsign(const char *str, int *sign, char **ptr)
 	return (str);
 }
 
-const char			*skip_mask(const char *str, const int base)
+static const char	*skip_mask(const char *str, const int base)
 {
 	if (str && *str)
 	{
