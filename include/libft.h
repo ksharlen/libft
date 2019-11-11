@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/30 17:10:14 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/11/11 22:50:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,16 @@
 # define RK(x) ((x) == '\r')
 # define TABS(x) (SP(x) || NL(x) || TB(x) || VT(x) || NP(x) || RK(x))
 
-# define DECIMAL	10
+# define DECIMAL				10
 
-# define FT_ABS(x) ((x) > 0 ? (x) : -(x))
-# define FIRST_SYM			0
-# define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
-# define CHECK_MOD(x)		((x) > 0) ? (x) : -(x)
-# define SET_BIT(val, num)	((val) = ((val) | (1 << (num))))
-# define NUM_CMP(a, b) 		((((a) ^ (b)) == 0) ? 0 : 1)
-# define P_UNUSED(x)		(void)(x)
+# define FIRST_SYM				0
+# define FT_ABS(x)				((x) > 0 ? (x) : -(x))
+# define NUM_MOD(x)				((x) = (x > 0) ? x : -(x))
+# define CHECK_MOD(x)			((x) > 0) ? (x) : -(x)
+# define SET_BIT(val, num)		((val) = ((val) | (1 << (num))))
+# define NUM_CMP(a, b) 			((((a) ^ (b)) == 0) ? 0 : 1)
+# define P_UNUSED(x)			(void)(x)
+# define FT_CLEAN_UP(ptr, size) ((ptr) = (char[(size)]){0})
 
 # define FLAG_ON			1
 # define FLAG_OFF			0
@@ -65,7 +66,7 @@
 # define W_FVAL 			change_the_value_by_name_in_file
 # define WEND_FVAL			ft_push_end_file
 # define NO_SUCH(filename) ft_printf("%s: %s", ESUCH, filename)
-# define S_RWSUPER 600
+# define S_RWSUPER 			600
 
 /*
 **SYS_ERRORS
@@ -98,6 +99,18 @@
 typedef int8_t	t_error;
 typedef	int8_t	t_byte;
 # define BYTE t_byte
+
+enum			e_type
+{
+	CHAR,
+	USHORT,
+	SHORT,
+	UINT,
+	INT,
+	ULONG,
+	LONG,
+	STRING,
+};
 
 typedef struct	s_list
 {
@@ -282,5 +295,6 @@ int				ft_atoi_base(const char *str, const int base);
 int				ft_atoi_base_ptr(const char *str, const int base, char **ptr);
 size_t			ft_num_words(const char *str, const char *entry_sym);
 void			*ft_memdup(void *content, size_t len_content);
+void			ft_print_arr(void *arr, size_t size, BYTE type);
 
 #endif
