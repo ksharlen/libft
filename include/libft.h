@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/11/11 22:50:06 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/11/11 23:18:03 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ typedef	int8_t	t_byte;
 
 enum			e_type
 {
+	UCHAR,
 	CHAR,
 	USHORT,
 	SHORT,
