@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/11/11 23:18:03 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/11/12 18:21:41 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,33 +71,36 @@
 /*
 **SYS_ERRORS
 */
-# define RET_ERROR	-1
-# define E_OPEN		0
-# define E_CLOSE	1
-# define E_READ		2
-# define E_OPENDIR	3
-# define E_CLOSEDIR 4
-# define E_READDIR	5
-# define E_FORK		6
-# define E_WAIT		7
-# define E_SIGNAL	8
-# define E_TIME		9
-# define E_CTIME	10
-# define E_WAITPID	11
-# define E_KILL		12
-# define E_GETCWD	13
-# define E_MALLOC	14
-# define E_CHDIR	15
-# define E_STAT		16
-# define E_FSTAT	17
-# define E_LSTAT	18
-# define E_GETPWUID	19
+# define RET_ERROR		-1
+# define E_OPEN			0
+# define E_CLOSE		1
+# define E_READ			2
+# define E_OPENDIR		3
+# define E_CLOSEDIR 	4
+# define E_READDIR		5
+# define E_FORK			6
+# define E_WAIT			7
+# define E_SIGNAL		8
+# define E_TIME			9
+# define E_CTIME		10
+# define E_WAITPID		11
+# define E_KILL			12
+# define E_GETCWD		13
+# define E_MALLOC		14
+# define E_CHDIR		15
+# define E_STAT			16
+# define E_FSTAT		17
+# define E_LSTAT		18
+# define E_GETPWUID		19
+# define E_TCGETATTR	20
+# define E_TCSETATTR	21
 
 # define CHK_SYS_ERR_EXT(val, err, name) if ((val) == F) ft_err_exit(err, name)
 # define CHK_NULL_PTR(ptr, err, name) if (!(ptr)) ft_err_exit(err, name)
 
 typedef int8_t	t_error;
 typedef	int8_t	t_byte;
+
 # define BYTE t_byte
 
 enum			e_type

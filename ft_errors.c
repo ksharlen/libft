@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 16:46:28 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/15 19:13:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/11/12 18:22:11 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ static const char *const g_sys_errors[] = {
 	"stat_error",
 	"fstat_error",
 	"lstat_error",
-	"getpwduid_error"
+	"getpwduid_error",
+	"tcgetattr_error",
+	"tcsetattr_error"
 };
 
 void	ft_err_str(t_error nerror, const char *add_text)
