@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/11/12 18:21:41 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/11/22 16:34:23 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@
 # define NP(x) ((x) == '\f')
 # define RK(x) ((x) == '\r')
 # define TABS(x) (SP(x) || NL(x) || TB(x) || VT(x) || NP(x) || RK(x))
+
+# define COPY ft_strcpy
+# define PASTE ft_strcat
+# define EXIT() exit(EXIT_FAILURE)
 
 # define DECIMAL				10
 
