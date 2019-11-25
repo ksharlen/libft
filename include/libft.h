@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/11/25 18:47:40 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/11/25 18:49:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@
 */
 enum			e_errors
 {
-	RET_ERROR = -1
+	RET_ERROR = -1,
 	E_OPEN,
 	E_CLOSE,
 	E_READ,
