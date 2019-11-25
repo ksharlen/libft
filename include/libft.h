@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/11/22 16:34:23 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/11/25 18:47:40 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,29 +75,36 @@
 /*
 **SYS_ERRORS
 */
-# define RET_ERROR		-1
-# define E_OPEN			0
-# define E_CLOSE		1
-# define E_READ			2
-# define E_OPENDIR		3
-# define E_CLOSEDIR 	4
-# define E_READDIR		5
-# define E_FORK			6
-# define E_WAIT			7
-# define E_SIGNAL		8
-# define E_TIME			9
-# define E_CTIME		10
-# define E_WAITPID		11
-# define E_KILL			12
-# define E_GETCWD		13
-# define E_MALLOC		14
-# define E_CHDIR		15
-# define E_STAT			16
-# define E_FSTAT		17
-# define E_LSTAT		18
-# define E_GETPWUID		19
-# define E_TCGETATTR	20
-# define E_TCSETATTR	21
+enum			e_errors
+{
+	RET_ERROR = -1
+	E_OPEN,
+	E_CLOSE,
+	E_READ,
+	E_OPENDIR,
+	E_CLOSEDIR,
+	E_READDIR,
+	E_FORK,
+	E_WAIT,
+	E_SIGNAL,
+	E_TIME,
+	E_CTIME,
+	E_WAITPID,
+	E_KILL,
+	E_GETCWD3,
+	E_MALLOC,
+	E_CHDIR,
+	E_STAT,
+	E_FSTAT,
+	E_LSTAT,
+	E_GETPWUID,
+	E_TCGETATTR,
+	E_TCSETATTR,
+	E_TGETENT,
+	E_TGETSTR,
+	E_TGOTO,
+	E_TPUTS
+};
 
 # define CHK_SYS_ERR_EXT(val, err, name) if ((val) == F) ft_err_exit(err, name)
 # define CHK_NULL_PTR(ptr, err, name) if (!(ptr)) ft_err_exit(err, name)
@@ -209,7 +216,7 @@ int				ft_memisstr(const char *str,
 /*
 **PRINT
 */
-void			ft_putchar(char c);
+int				ft_putchar(int c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
