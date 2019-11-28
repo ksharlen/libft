@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/11/26 02:12:48 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/11/28 16:59:25 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@
 # define VT(x) ((x) == '\v')
 # define NP(x) ((x) == '\f')
 # define RK(x) ((x) == '\r')
+# define RT(x) ((x) == '\b')
+# define SG(x) ((x) == '\a')
 # define TABS(x) (SP(x) || NL(x) || TB(x) || VT(x) || NP(x) || RK(x))
 
 # define COPY ft_strcpy

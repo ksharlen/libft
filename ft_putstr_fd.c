@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 16:42:38 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/30 09:10:06 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/11/28 18:14:25 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,5 @@ void	ft_putstr_fd(char const *s, int fd)
 {
 	if (s)
 		if (fd >= 0 && fd < 7169)
-		{
-			while (*s)
-				ft_putchar_fd(*s++, fd);
-		}
+			write(fd, s, ft_strlen(s));
 }
