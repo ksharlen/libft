@@ -6,13 +6,14 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/11/28 16:59:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/11 00:14:50 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <limits.h>
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -21,6 +22,7 @@
 # include <sys/types.h>
 # include <assert.h>
 # include <errno.h>
+
 # include "ft_printf.h"
 # include "ft_getopt.h"
 
@@ -28,7 +30,6 @@
 #  define NULL ((void *)0)
 # endif
 
-# define MAXLONG 			9223372036854775807
 # define FD_MAX				7198
 # define BUFF_SIZE			20
 
@@ -313,5 +314,6 @@ int				ft_atoi_base_ptr(const char *str, const int base, char **ptr);
 size_t			ft_num_words(const char *str, const char *entry_sym);
 void			*ft_memdup(void *content, size_t len_content);
 void			ft_print_arr(void *arr, size_t size, BYTE type);
+const char		*ft_skip_space(const char *str);
 
 #endif

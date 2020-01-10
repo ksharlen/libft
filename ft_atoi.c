@@ -3,32 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 15:35:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/30 09:19:01 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/11 00:11:47 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int							ft_atoi(const char *s)
+static long		chk_ovf(long result, short sign)
 {
-	unsigned long long int	res;
-	int						sign;
+	if (sign == 1)
+	{
+		if (result > INT_MAX)
+			return (0);
+	}
+	else if (sign == -1)
+	{
+		if ((result * (-1)) < INT_MIN)
+			return (-1);
+	}
+	return (1);
+}
 
-	res = 0;
-	sign = 1;
-	while (ft_isspace(*s))
-		s++;
-	if (*s == '-' || *s == '+')
-		if (*(s++) == '-')
-			sign = -1;
-	while (ft_isdigit(*s) && res <= MAXLONG / 10)
-		res = res * 10 + (*(s++) - '0');
-	if (sign == -1 && (res > MAXLONG || ft_isdigit(*s)))
-		res = 0;
-	else if (res > MAXLONG || ft_isdigit(*s))
-		res = -1;
-	return (res * sign);
+static short	get_sign(const char **str)
+{
+	short sign;
+
+	if (**str == '+')
+	{
+		sign = 1;
+		(*str)++;
+	}
+	else if (**str == '-')
+	{
+		sign = -1;
+		(*str)++;
+	}
+	else
+		sign = 1;
+	return (sign);
+}
+
+int				ft_atoi(const char *str)
+{
+	long	result;
+	int		digit;
+	int		ret;
+	short	sign;
+
+	result = 0;
+	str = ft_skip_space(str);
+	sign = get_sign(&str);
+	if (str)
+	{
+		while (*str && ft_isdigit(*str))
+		{
+			digit = *str - '0';
+			result = result * 10 + digit;
+			ret = chk_ovf(result, sign);
+			if (ret == -1 || ret == 0)
+				return (ret);
+			++str;
+		}
+	}
+	return ((int)(result * sign));
 }
