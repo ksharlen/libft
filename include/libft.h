@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/11 00:14:50 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/12 20:22:17 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,11 @@
 # define CHECK_MOD(x)			((x) > 0) ? (x) : -(x)
 # define SET_BIT(val, num)		((val) = ((val) | (1 << (num))))
 # define NUM_CMP(a, b) 			((((a) ^ (b)) == 0) ? 0 : 1)
-# define P_UNUSED(x)			(void)(x)
 # define FT_CLEAN_UP(ptr, size) ((ptr) = (char[(size)]){0})
+
+# ifndef P_UNUSED
+#  define P_UNUSED(x)			(void)(x)
+# endif
 
 # define FLAG_ON			1
 # define FLAG_OFF			0
