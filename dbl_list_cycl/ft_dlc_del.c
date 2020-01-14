@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 17:51:41 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/14 19:58:31 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/14 20:06:18 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,31 @@ void	ft_dlc_del_elem(t_dlc *elem)
 	}
 }
 
+void	ft_dlc_del_elem_f(t_dlc *elem, void (*del)())
+{
+	if (elem)
+	{
+		if (elem->next && elem->next->next != elem)
+		{
+			elem->prev->next = elem->next;
+			elem->next->prev = elem->prev;
+		}
+		else if (elem->next)
+		{
+			elem->next->next = NULL;
+			elem->next->prev = NULL;
+		}
+		del(&elem->data);
+		ft_dlc_del(&elem);
+	}
+}
+
 void	ft_dlc_del(t_dlc **elem)
 {
 	if (elem && *elem)
 	{
-		free((*elem)->data);
+		if ((*elem)->data)
+			free((*elem)->data);
 		free(*elem);
 		(*elem) = NULL;
 	}

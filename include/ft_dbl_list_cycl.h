@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 15:03:29 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/14 19:40:35 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/14 20:05:04 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,18 @@ void	ft_dlc_add_beg(t_dlc **beg, void *data, size_t size_data);
 void	ft_dlc_add_end(t_dlc **beg, void *data, size_t size_data);
 t_dlc	*ft_dlc_get_beg(t_dlc **beg);
 t_dlc	*ft_dlc_get_end(t_dlc **beg);
+size_t	ft_dlc_get_size(t_dlc *beg);
+void	ft_dlc_del_list(t_dlc **beg);
+void	ft_dlc_del(t_dlc **elem);
 
 /*
 **beg does not = NULL
 */
 void	ft_dlc_del_elem(t_dlc *elem);
-void	ft_dlc_del(t_dlc **elem);
 
 /*
 **DEV
 */
-void	ft_dlc_del_list(t_dlc **beg);
-size_t	ft_dlc_get_size(t_dlc *beg);
+void	ft_dlc_del_elem_f(t_dlc *elem, void (*del)());
 
 #endif
