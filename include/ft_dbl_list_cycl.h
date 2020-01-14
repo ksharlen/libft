@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 15:03:29 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/14 20:14:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/14 21:23:44 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	ft_dlc_del_elem(t_dlc *elem, void (*del)());
 /*
 **DEV
 */
+void	ft_dlc_del_struct(t_dlc **elem);
 
 #endif

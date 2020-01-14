@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 14:30:40 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/14 14:35:38 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/14 21:26:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,28 @@
 
 # include "libft.h"
 
+# define SIZE_IN_BYTES(type, size) (sizeof(type) * (size))
+
+# ifndef TRUE
+#  define TRUE 1
+# endif
+
+# ifndef FALSE
+#  define FALSE 0
+# endif
+
 typedef struct	s_queue
 {
-	struct s_list	*beg_queue;
-	struct s_list	*end_queue;
+	t_dlc		*beg_dek;
 }				t_queue;
 
-//push
-//pop
+/*
+**DEV
+*/
+void	ft_qu_init(t_queue *qu);
+void	ft_qu_push(t_queue *qu, void *data, size_t size_data);
+void	*ft_qu_pop(t_queue *qu);
+int		ft_qu_is_empty(t_queue *qu);
+void	ft_qu_remove(t_queue *qu, void (*del)());
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 17:51:41 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/14 20:14:36 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/14 21:23:49 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,15 @@ void	ft_dlc_del(t_dlc **elem)
 	{
 		if ((*elem)->data)
 			free((*elem)->data);
+		free(*elem);
+		(*elem) = NULL;
+	}
+}
+
+void	ft_dlc_del_struct(t_dlc **elem)
+{
+	if (elem && *elem)
+	{
 		free(*elem);
 		(*elem) = NULL;
 	}
