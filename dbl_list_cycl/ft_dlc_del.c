@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 17:51:41 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/14 20:06:18 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/14 20:14:36 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_dbl_list_cycl.h"
 
-void	ft_dlc_del_list(t_dlc **beg)
+void	ft_dlc_del_list(t_dlc **beg, void (*del)())
 {
 	t_dlc	*res;
 	t_dlc	*tmp;
@@ -32,12 +32,12 @@ void	ft_dlc_del_list(t_dlc **beg)
 			}
 		}
 		else
-			ft_dlc_del_elem(*beg);
+			ft_dlc_del_elem(*beg, del);
 		(*beg) = NULL;
 	}
 }
 
-void	ft_dlc_del_elem(t_dlc *elem)
+void	ft_dlc_del_elem(t_dlc *elem, void (*del)())
 {
 	if (elem)
 	{
@@ -51,25 +51,8 @@ void	ft_dlc_del_elem(t_dlc *elem)
 			elem->next->next = NULL;
 			elem->next->prev = NULL;
 		}
-		ft_dlc_del(&elem);
-	}
-}
-
-void	ft_dlc_del_elem_f(t_dlc *elem, void (*del)())
-{
-	if (elem)
-	{
-		if (elem->next && elem->next->next != elem)
-		{
-			elem->prev->next = elem->next;
-			elem->next->prev = elem->prev;
-		}
-		else if (elem->next)
-		{
-			elem->next->next = NULL;
-			elem->next->prev = NULL;
-		}
-		del(&elem->data);
+		if (del)
+			del(&elem);
 		ft_dlc_del(&elem);
 	}
 }

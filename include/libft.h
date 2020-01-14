@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/12 20:22:17 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/14 20:32:26 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 
 # include "ft_printf.h"
 # include "ft_getopt.h"
+# include "ft_dbl_list_cycl.h"
 
 # ifndef NULL
 #  define NULL ((void *)0)

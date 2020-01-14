@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 19:34:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/14 20:00:44 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/14 20:15:00 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ size_t	ft_dlc_get_size(t_dlc *beg)
 	}
 	return (qt_elems);
 }
-
 
