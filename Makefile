@@ -6,12 +6,13 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2020/01/14 20:31:34 by ksharlen         ###   ########.fr        #
+#    Updated: 2020/01/15 15:09:54 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include ./ft_printf/Makefile
 include ./dbl_list_cycl/Makefile
+include ./queue/Makefile
 
 NAME 			:= libft.a
 FLAGS 			:= -Wextra -Werror -Wall
@@ -25,6 +26,7 @@ DIR_BIN 		:= bin/
 DIR_LIBFT		:= .
 DIR_FT_PRINTF	:= ft_printf/
 DIR_DLC			:= dbl_list_cycl/
+DIR_QU			:= queue/
 
 SRC_LIBFT 		:= ft_arrfind.c\
 						ft_atoi.c\
@@ -145,10 +147,10 @@ SRC_LIBFT 		:= ft_arrfind.c\
 						ft_print_arr.c\
 						ft_skip_space.c
 
-SRCS 			:= $(SRC_LIBFT) $(SRCS_FT_PRINTF) $(SRC_DLC)
+SRCS 			:= $(SRC_LIBFT) $(SRCS_FT_PRINTF) $(SRC_DLC) $(SRC_QU)
 
 DIRS_FT_PRINTF	:= $(addprefix $(DIR_FT_PRINTF), $(DIRS_FT_PRINTF))
-DIRS_SRC		:= $(DIRS_FT_PRINTF) $(DIR_LIBFT) $(DIR_DLC)
+DIRS_SRC		:= $(DIRS_FT_PRINTF) $(DIR_LIBFT) $(DIR_DLC) $(DIR_QU)
 
 OBJS			:= $(SRCS:.c=.o)
 OBJS_BIN		:= $(addprefix $(DIR_BIN), $(OBJS))
