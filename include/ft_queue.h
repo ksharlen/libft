@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 14:30:40 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/14 21:26:38 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/15 14:32:09 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <sys/types.h>
 # include <limits.h>
 
+# include "ft_dbl_list_cycl.h"
 # include "libft.h"
 
 # define SIZE_IN_BYTES(type, size) (sizeof(type) * (size))
