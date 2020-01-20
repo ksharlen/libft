@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/15 11:33:37 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/20 19:37:01 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,13 @@
 # define WEND_FVAL			ft_push_end_file
 # define NO_SUCH(filename) ft_printf("%s: %s", ESUCH, filename)
 # define S_RWSUPER 			600
+
+# define FT_COLOR_DFLT		"\e[0m"
+# define FT_COLOR_BLUE		"\e[34;1m"
+# define FT_COLOR_RED		"\e[31;1m"
+# define FT_COLOR_CYAN		"\e[36;1m"
+# define FT_COLOR_YELLOW	"\e[33;1m"
+# define FT_COLOR_GREEN		"\e[32;1m"
 
 /*
 **SYS_ERRORS
