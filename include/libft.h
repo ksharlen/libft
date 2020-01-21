@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/20 19:37:01 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/01/21 15:31:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -334,5 +334,6 @@ size_t			ft_num_words(const char *str, const char *entry_sym);
 void			*ft_memdup(void *content, size_t len_content);
 void			ft_print_arr(void *arr, size_t size, BYTE type);
 const char		*ft_skip_space(const char *str);
+void			ft_print_nsym(int fd, char sym, size_t n);
 
 #endif
