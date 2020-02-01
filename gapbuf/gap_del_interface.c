@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 22:39:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/01 16:22:28 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/01 17:01:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void		del_sym(t_gapbuf *buf, size_t del)
 	{
 		ind = get_sym_ind_at_buf(buf, del);
 		gap_move(buf, ind);
-		BUF[GAP_END +++ 1] = '\0';
+		BUF[GAP_END++ + 1] = '\0';
 		LEN_STR--;
 		SIZE_GAP_BUF++;
 	}

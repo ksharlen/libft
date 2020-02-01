@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/01 16:37:50 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/01 17:00:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		get_sym_ind_at_buf(t_gapbuf *buf, size_t pos_sym)
 	{
 		ind = 0;
 		sym = 0;
-		while(ind < (LEN_STR + SIZE_GAP_BUF) && sym != pos_sym)
+		while (ind < (LEN_STR + SIZE_GAP_BUF) && sym != pos_sym)
 		{
 			if (BUF[ind++] != '\0')
 				++sym;

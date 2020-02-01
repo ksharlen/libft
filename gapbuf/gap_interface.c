@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/24 22:26:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/01 16:38:49 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/01 17:03:26 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,19 @@ void	gap_slide_right(t_gapbuf *buf)
 		++GAP_SLIDE;
 }
 
-void			gap_init(t_gapbuf *buf, size_t GAP_GAP_SIZE_BUF,
+void			gap_init(t_gapbuf *buf, size_t size_buf,
 	size_t size_gap)
 {
 	if (BUF)
 		BUF = NULL;
-	if (GAP_GAP_SIZE_BUF && size_gap)
+	if (GAP_SIZE_BUF && size_gap)
 	{
 		BUF = (char *)ft_memalloc(sizeof(char) *
-			(GAP_GAP_SIZE_BUF + size_gap));
+			(size_buf + size_gap));
 		if (!BUF)
 			die_gap("gap_init: malloc_error");
-		GAP_GAP_SIZE_BUF = GAP_GAP_SIZE_BUF + size_gap;
-		ft_bzero(BUF, sizeof(char) * GAP_GAP_SIZE_BUF);
+		GAP_SIZE_BUF = size_buf + size_gap;
+		ft_bzero(BUF, sizeof(char) * GAP_SIZE_BUF);
 		SIZE_GAP_BUF = size_gap;
 		buf->main_size_gap_buf = size_gap;
 		GAP_START = 0;
@@ -80,5 +80,5 @@ void			gap_init(t_gapbuf *buf, size_t GAP_GAP_SIZE_BUF,
 		LEN_STR = 0;
 	}
 	else
-		die_gap("GAP_GAP_SIZE_BUF || size_gap = 0");
+		die_gap("GAP_SIZE_BUF || size_gap = 0");
 }
