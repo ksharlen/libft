@@ -6,22 +6,22 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 17:18:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/01 16:57:09 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/01 17:48:34 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gap_buf.h"
 
-void	print_buf_int(char *buf, size_t GAP_SIZE_BUF)
+void	print_buf_int(char *buf, size_t size_buf)
 {
-	for (size_t i = 0; i < GAP_SIZE_BUF; ++i)
+	for (size_t i = 0; i < size_buf; ++i)
 		ft_printf("buf[%zd] = %d\n", i, buf[i]);
 	ft_printf("\n");
 }
 
-void	print_buf_char(char *buf, size_t GAP_SIZE_BUF)
+void	print_buf_char(char *buf, size_t size_buf)
 {
-	for (size_t i = 0; i < GAP_SIZE_BUF; ++i)
+	for (size_t i = 0; i < size_buf; ++i)
 		ft_printf("buf[%zd] = %c\n", i, buf[i]);
 	ft_printf("\n");
 }
