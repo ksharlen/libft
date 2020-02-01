@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/28 18:23:24 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/01 16:37:50 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	get_new_gapbuf(t_gapbuf *buf, size_t len_get_new_gapbuf)
 {
 	if (!len_get_new_gapbuf)
 		len_get_new_gapbuf = buf->main_size_gap_buf;
-	if (len_get_new_gapbuf >= (SIZE_BUF - LEN_STR))
-		len_get_new_gapbuf = (SIZE_BUF - LEN_STR);
+	if (len_get_new_gapbuf >= (GAP_SIZE_BUF - LEN_STR))
+		len_get_new_gapbuf = (GAP_SIZE_BUF - LEN_STR);
 	GAP_START = LEN_STR + 1;
 	GAP_END = GAP_START + len_get_new_gapbuf - 1;
 	SIZE_GAP_BUF = len_get_new_gapbuf;
@@ -59,6 +59,6 @@ void	delete_gapbuf(t_gapbuf *buf)
 
 void	die_gap(const char *s)
 {
-	write(STDERR_FILENO, s, strlen(s));
+	write(STDERR_FILENO, s, ft_strlen(s));
 	exit(EXIT_FAILURE);
 }

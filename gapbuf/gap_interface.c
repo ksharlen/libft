@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/24 22:26:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/01 16:04:14 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/01 16:38:49 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,17 @@ static void		fill_str_skip_gap(t_gapbuf *buf, char *str)
 	}
 }
 
-//!Переделать под libft
 char			*gap_get_buf(t_gapbuf *buf)
 {
 	char	*str;
 
-	str = (char *)malloc(sizeof(char) * (LEN_STR + 1));
-	bzero(str, LEN_STR + 1);
+	str = ft_strnew(LEN_STR);
+	if (!str)
+		die_gap("gap_get_buf: malloc_error");
 	if (!GAP_START)
-		memcpy(str, &BUF[GAP_END + 1], LEN_STR);
+		ft_memcpy(str, &BUF[GAP_END + 1], LEN_STR);
 	else if (GAP_START == (LEN_STR + 1))
-		memcpy(str, BUF, LEN_STR);
+		ft_memcpy(str, BUF, LEN_STR);
 	else
 		fill_str_skip_gap(buf, str);
 	str[LEN_STR] = '\0';
@@ -59,18 +59,19 @@ void	gap_slide_right(t_gapbuf *buf)
 		++GAP_SLIDE;
 }
 
-//!Переделать под libft
-void			gap_init(t_gapbuf *buf, size_t size_buf, size_t size_gap)
+void			gap_init(t_gapbuf *buf, size_t GAP_GAP_SIZE_BUF,
+	size_t size_gap)
 {
 	if (BUF)
 		BUF = NULL;
-	if (size_buf && size_gap)
+	if (GAP_GAP_SIZE_BUF && size_gap)
 	{
-		BUF = (char *)malloc(sizeof(char) * (size_buf + size_gap));
+		BUF = (char *)ft_memalloc(sizeof(char) *
+			(GAP_GAP_SIZE_BUF + size_gap));
 		if (!BUF)
 			die_gap("gap_init: malloc_error");
-		memset(BUF, 0, sizeof(char) * size_buf);
-		SIZE_BUF = size_buf + size_gap;
+		GAP_GAP_SIZE_BUF = GAP_GAP_SIZE_BUF + size_gap;
+		ft_bzero(BUF, sizeof(char) * GAP_GAP_SIZE_BUF);
 		SIZE_GAP_BUF = size_gap;
 		buf->main_size_gap_buf = size_gap;
 		GAP_START = 0;
@@ -79,5 +80,5 @@ void			gap_init(t_gapbuf *buf, size_t size_buf, size_t size_gap)
 		LEN_STR = 0;
 	}
 	else
-		die_gap("size_buf || size_gap = 0");
+		die_gap("GAP_GAP_SIZE_BUF || size_gap = 0");
 }

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/28 18:23:46 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/01 16:35:25 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void		gap_put_end_str(t_gapbuf *buf, char sym)
 
 void			gap_putchar_in_buf(t_gapbuf *buf, char sym)
 {
-	if ((LEN_STR + SIZE_GAP_BUF) < SIZE_BUF)
+	if ((LEN_STR + SIZE_GAP_BUF) < GAP_SIZE_BUF)
 	{
 		if (GAP_SLIDE == LEN_STR)
 			gap_put_end_str(buf, sym);

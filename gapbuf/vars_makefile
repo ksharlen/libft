@@ -1,7 +1,0 @@
-
-
-OBJ			:=	$(SRC:.c=.o)
-HEADERS		:=	gap_buf.h
-CFLAGS		:=	-Wall -Wextra -Werror -g
-DIR_BIN		:=	bin/
-PATH_OBJ	:=	$(addprefix $(DIR_BIN), $(OBJ))

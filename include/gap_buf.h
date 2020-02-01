@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/01 15:00:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/01 16:43:03 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@
 # include <string.h>
 # include <errno.h>
 
+# include "libft.h"
+
 # define DFLT_SIZE_GAP		10
+
 # ifndef P_UNUSED
 #  define P_UNUSED(var) ((void)var)
 # endif
@@ -30,7 +33,7 @@
 # define BUF			buf->buf
 # define GAP_START		buf->gap_start
 # define GAP_END		buf->gap_end
-# define SIZE_BUF		buf->size_buf
+# define GAP_SIZE_BUF	buf->size_buf
 # define SIZE_GAP_BUF	buf->size_gap_buf
 # define LEN_STR		buf->len_string
 # define GAP_SLIDE		buf->slide
@@ -79,12 +82,11 @@ void			get_new_gapbuf(t_gapbuf *buf, size_t len_get_new_gapbuf);
 void			delete_gapbuf(t_gapbuf *buf);
 void			gap_move(t_gapbuf *buf, size_t ind);
 
-//*TMP
+/*
+**TMP
+*/
 void			print_stat_t_gapbuf(t_gapbuf *buf);
 void			print_buf_int(char *buf, size_t size_buf);
 void			print_buf_char(char *buf, size_t size_buf);
-extern FILE *fp;
-
-//TODO: сделать заполнение t_gapbuf когда у нас закончился размер
 
 #endif
