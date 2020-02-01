@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2020/01/25 18:13:35 by ksharlen         ###   ########.fr        #
+#    Updated: 2020/02/01 16:17:07 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,20 @@ include ./ft_printf/Makefile
 include ./dbl_list_cycl/Makefile
 include ./queue/Makefile
 include ./stack/Makefile
+include ./gapbuf/Makefile
 
 NAME 			:= libft.a
 FLAGS 			:= -Wextra -Werror -Wall
 CC 				:= gcc
 REMOVE 			:= /bin/rm -rf
 DIR_INCLUDE 	:= ./include
-H_LIBFT			:= libft.h ft_dbl_list_cycl.h ft_queue.h ft_stack.h
+
+H_LIBFT			:= libft.h\
+						ft_dbl_list_cycl.h\
+						ft_queue.h\
+						ft_stack.h\
+						gap_buf.h
+
 H_FT_PRINTF		:= ft_printf.h
 HEADERS			:= $(H_LIBFT) $(H_FT_PRINTF)
 DIR_BIN 		:= bin/
@@ -29,6 +36,7 @@ DIR_FT_PRINTF	:= ft_printf/
 DIR_DLC			:= dbl_list_cycl/
 DIR_QU			:= queue/
 DIR_STK			:= stack/
+DIR_GAPBUF		:= gapbuf/
 
 SRC_LIBFT 		:= ft_arrfind.c\
 						ft_atoi.c\
@@ -149,10 +157,21 @@ SRC_LIBFT 		:= ft_arrfind.c\
 						ft_print_arr.c\
 						ft_skip_space.c
 
-SRCS 			:= $(SRC_LIBFT) $(SRCS_FT_PRINTF) $(SRC_DLC) $(SRC_QU) $(SRC_STK)
+SRCS 			:= $(SRC_LIBFT)\
+						$(SRCS_FT_PRINTF)\
+						$(SRC_DLC)\
+						$(SRC_QU)\
+						$(SRC_STK)\
+						$(SRC_GAPBUF)
 
 DIRS_FT_PRINTF	:= $(addprefix $(DIR_FT_PRINTF), $(DIRS_FT_PRINTF))
-DIRS_SRC		:= $(DIRS_FT_PRINTF) $(DIR_LIBFT) $(DIR_DLC) $(DIR_QU) $(DIR_STK)
+
+DIRS_SRC		:= $(DIRS_FT_PRINTF)\
+						$(DIR_LIBFT)\
+						$(DIR_DLC)\
+						$(DIR_QU)\
+						$(DIR_STK)\
+						$(DIR_GAPBUF)
 
 OBJS			:= $(SRCS:.c=.o)
 OBJS_BIN		:= $(addprefix $(DIR_BIN), $(OBJS))
