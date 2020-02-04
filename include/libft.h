@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/21 15:31:30 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/03 02:07:26 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,8 @@ enum			e_errors
 	E_TGETENT,
 	E_TGETSTR,
 	E_TGOTO,
-	E_TPUTS
+	E_TPUTS,
+	E_WRITE
 };
 
 # define CHK_SYS_ERR_EXT(val, err, name) if ((val) == F) ft_err_exit(err, name)
