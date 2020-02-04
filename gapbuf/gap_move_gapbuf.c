@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/01 15:00:40 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/05 01:43:16 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,8 @@ void			gapbuf_move_to_slide(t_gapbuf *buf)
 	int ind;
 
 	ind = get_sym_ind_at_buf(buf, GAP_SLIDE);
-	if (ind)
-		if (GAP_END != (size_t)ind - 1 && GAP_SLIDE < LEN_STR)
-			gap_move(buf, ind);
+	if (!ind || (GAP_END != (size_t)ind - 1 && GAP_SLIDE < LEN_STR))
+		gap_move(buf, ind);
 	if (ind == -1)
 		die_gap("gapbuf_move_to_slide: SLIDE > LEN_STR");
 }
