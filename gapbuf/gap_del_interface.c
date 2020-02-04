@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 22:39:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/01 17:01:05 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/05 00:04:48 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,17 @@ void			gap_del_sym_on_slide(t_gapbuf *buf)
 {
 	if (LEN_STR && GAP_SLIDE < LEN_STR)
 		del_sym(buf, GAP_SLIDE);
+}
+
+void			gap_clean_buf(t_gapbuf *buf)
+{
+	if (LEN_STR)
+	{
+		ft_bzero(buf->buf, sizeof(char) * GAP_SIZE_BUF);
+		SIZE_GAP_BUF = buf->main_size_gap_buf;
+		GAP_START = 0;
+		GAP_END = SIZE_GAP_BUF - 1;
+		GAP_SLIDE = 0;
+		LEN_STR = 0;
+	}
 }

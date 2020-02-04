@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/24 22:26:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/01 17:03:26 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/04 23:52:32 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void			gap_init(t_gapbuf *buf, size_t size_buf,
 {
 	if (BUF)
 		BUF = NULL;
-	if (GAP_SIZE_BUF && size_gap)
+	if (size_buf && size_gap)
 	{
 		BUF = (char *)ft_memalloc(sizeof(char) *
 			(size_buf + size_gap));
@@ -80,5 +80,5 @@ void			gap_init(t_gapbuf *buf, size_t size_buf,
 		LEN_STR = 0;
 	}
 	else
-		die_gap("GAP_SIZE_BUF || size_gap = 0");
+		die_gap("size_buf || size_gap = 0");
 }
