@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/03 02:07:26 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/06 18:31:39 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -336,5 +336,6 @@ void			*ft_memdup(void *content, size_t len_content);
 void			ft_print_arr(void *arr, size_t size, BYTE type);
 const char		*ft_skip_space(const char *str);
 void			ft_print_nsym(int fd, char sym, size_t n);
+char			*ft_strreplace(char *in, char *from);
 
 #endif
