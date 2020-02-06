@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/24 22:26:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/06 21:23:27 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/06 22:25:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,20 @@ char			*gap_get_buf(t_gapbuf *buf)
 {
 	char	*str;
 
-	str = ft_strnew(LEN_STR);
-	if (!str)
-		die_gap("gap_get_buf: malloc_error");
-	if (!GAP_START)
-		ft_memcpy(str, &BUF[GAP_END + 1], LEN_STR);
-	else if (GAP_START == (LEN_STR + 1))
-		ft_memcpy(str, BUF, LEN_STR);
-	else
-		fill_str_skip_gap(buf, str);
-	str[LEN_STR] = '\0';
+	str = NULL;
+	if (LEN_STR)
+	{
+		str = ft_strnew(LEN_STR);
+		if (!str)
+			die_gap("gap_get_buf: malloc_error");
+		if (!GAP_START)
+			ft_memcpy(str, &BUF[GAP_END + 1], LEN_STR);
+		else if (GAP_START == (LEN_STR + 1))
+			ft_memcpy(str, BUF, LEN_STR);
+		else
+			fill_str_skip_gap(buf, str);
+		str[LEN_STR] = '\0';
+	}
 	return (str);
 }
 
