@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/06 18:31:39 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/06 22:57:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@
 
 # define FIRST_SYM				0
 # define FT_ABS(x)				((x) > 0 ? (x) : -(x))
-# define NUM_MOD(x)				((x) = (x > 0) ? x : -(x))
+# define NUM_MOD(x)				((x) = ((x) > 0) ? (x) : -(x))
 # define CHECK_MOD(x)			((x) > 0) ? (x) : -(x)
 # define SET_BIT(val, num)		((val) = ((val) | (1 << (num))))
 # define NUM_CMP(a, b) 			((((a) ^ (b)) == 0) ? 0 : 1)
