@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/06 22:57:30 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/07 02:35:32 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -337,5 +337,6 @@ void			ft_print_arr(void *arr, size_t size, BYTE type);
 const char		*ft_skip_space(const char *str);
 void			ft_print_nsym(int fd, char sym, size_t n);
 char			*ft_strreplace(char *in, char *from);
+void			ft_swap_sym(char *one, char *two);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 22:39:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/06 22:44:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/07 02:52:59 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,28 @@ void			gap_clean_buf(t_gapbuf *buf)
 		GAP_END = SIZE_GAP_BUF - 1;
 		GAP_SLIDE = 0;
 		LEN_STR = 0;
+	}
+}
+
+void			gap_swap_two_sym(t_gapbuf *buf)
+{
+	int		ind;
+
+	if (LEN_STR > 1)
+	{
+		gap_move(buf, SIZE_GAP_BUF + LEN_STR + 1);
+		ind = get_sym_ind_at_buf(buf, GAP_SLIDE);
+		if (!GAP_SLIDE)
+		{
+			ft_swap_sym(&BUF[ind], &BUF[ind + 1]);
+			GAP_SLIDE += 2;
+		}
+		else if (GAP_SLIDE == LEN_STR)
+			ft_swap_sym(&BUF[ind - 1], &BUF[ind - 2]);
+		else
+		{
+			ft_swap_sym(&BUF[ind - 1], &BUF[ind]);
+			++GAP_SLIDE;
+		}
 	}
 }
