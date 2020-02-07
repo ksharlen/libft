@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 17:18:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/01 17:48:34 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/08 01:14:31 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,18 @@ void	print_stat_t_gapbuf(t_gapbuf *buf)
 	ft_printf("len_string: %zd\n", buf->len_string);
 	ft_printf("GAP_SLIDE: %zd\n", buf->slide);
 	ft_printf("main_size_gap_buf: %zd\n", buf->main_size_gap_buf);
+}
+
+void	gap_print_buf(t_gapbuf *buf)
+{
+	size_t	size;
+
+	if (BUF && LEN_STR)
+	{
+		if (GAP_START < LEN_STR + 1)
+			size = SIZE_GAP_BUF + LEN_STR;
+		else
+			size = LEN_STR;
+		write(STDOUT_FILENO, BUF, size);
+	}
 }

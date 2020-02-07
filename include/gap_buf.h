@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/07 02:33:19 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/08 01:15:11 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,11 @@ void			gapbuf_move_to_slide(t_gapbuf *buf);
 void			get_new_gapbuf(t_gapbuf *buf, size_t len_get_new_gapbuf);
 void			delete_gapbuf(t_gapbuf *buf);
 void			gap_move(t_gapbuf *buf, size_t ind);
+
+/*
+**PRINT_BUF
+*/
+void			gap_print_buf(t_gapbuf *buf);
 
 /*
 **TMP
