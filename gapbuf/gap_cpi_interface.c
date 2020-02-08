@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 18:49:52 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/01 16:38:04 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/08 17:41:28 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char			*gap_cut_str(t_gapbuf *buf)
 	return (str);
 }
 
-static void		gap_put_str(t_gapbuf *buf, const char *str)
+void			gap_put_str(t_gapbuf *buf, const char *str)
 {
 	size_t	i;
 	size_t	len_str;
