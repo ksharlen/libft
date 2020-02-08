@@ -6,14 +6,11 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 15:06:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/14 17:44:19 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/08 19:23:17 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_dbl_list_cycl.h"
-
-#define ELEMS_N	(*beg) && (*beg)->next && (*beg)->next->next != (*beg)
-#define ELEMS_2 (*beg) && (*beg)->next && (*beg)->next->next == (*beg)
 
 t_dlc	*ft_dlc_new(void *data, size_t size_data)
 {
@@ -97,12 +94,12 @@ t_dlc	*ft_dlc_get_beg(t_dlc **beg)
 	{
 		taken = (*beg);
 		(*beg) = (*beg)->next;
-		if (ELEMS_N)
+		if ((*beg) && (*beg)->next && (*beg)->next->next != (*beg))
 		{
 			(*beg)->prev = taken->prev;
 			taken->prev->next = (*beg);
 		}
-		else if (ELEMS_2)
+		else if ((*beg) && (*beg)->next && (*beg)->next->next == (*beg))
 		{
 			(*beg)->next = NULL;
 			(*beg)->prev = NULL;
@@ -123,12 +120,12 @@ t_dlc	*ft_dlc_get_end(t_dlc **beg)
 	if (beg && (*beg))
 	{
 		taken = (*beg)->prev;
-		if (ELEMS_N)
+		if ((*beg) && (*beg)->next && (*beg)->next->next != (*beg))
 		{
 			taken->prev->next = (*beg);
 			(*beg)->prev = taken->prev;
 		}
-		else if (ELEMS_2)
+		else if ((*beg) && (*beg)->next && (*beg)->next->next == (*beg))
 		{
 			(*beg)->next = NULL;
 			(*beg)->prev = NULL;
