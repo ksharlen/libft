@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 16:46:28 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/03 02:07:42 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/08 23:56:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,16 @@ void	ft_err_exit(t_error nerror, const char *add_text)
 {
 	ft_err_str(nerror, add_text);
 	exit(EXIT_FAILURE);
+}
+
+void	ft_chk_null_ptr(void *ptr, t_error nerror)
+{
+	if (!ptr)
+		ft_err_exit(nerror, NULL);
+}
+
+void	ft_chk_sys_error(ssize_t val, t_error nerror)
+{
+	if (val == -1)
+		ft_err_exit(nerror, NULL);
 }

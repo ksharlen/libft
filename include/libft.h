@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/07 02:35:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/09 18:08:40 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ enum			e_errors
 # define CHK_NULL_PTR(ptr, err, name) if (!(ptr)) ft_err_exit(err, name)
 
 typedef int8_t	t_error;
-typedef	int8_t	t_byte;
+typedef	uint8_t	t_byte;
 
 # define BYTE t_byte
 
@@ -338,5 +338,7 @@ const char		*ft_skip_space(const char *str);
 void			ft_print_nsym(int fd, char sym, size_t n);
 char			*ft_strreplace(char *in, char *from);
 void			ft_swap_sym(char *one, char *two);
+void			ft_chk_null_ptr(void *ptr, t_error nerror);
+void			ft_chk_sys_error(ssize_t val, t_error nerror);
 
 #endif
