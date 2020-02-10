@@ -22,6 +22,7 @@
 # include <sys/types.h>
 # include <assert.h>
 # include <errno.h>
+# include <stdint.h>
 
 # include "ft_printf.h"
 # include "ft_getopt.h"
