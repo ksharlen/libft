@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/09 18:08:40 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 20:20:11 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@
 # define R_FVAL				get_name_value
 # define W_FVAL 			change_the_value_by_name_in_file
 # define WEND_FVAL			ft_push_end_file
-# define NO_SUCH(filename) ft_printf("%s: %s", ESUCH, filename)
 # define S_RWSUPER 			600
 
 # define FT_COLOR_DFLT		"\e[0m"
