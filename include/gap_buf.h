@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/08 17:42:04 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 21:10:48 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,6 @@
 # include "libft.h"
 
 # define DFLT_SIZE_GAP		10
-
-# ifndef P_UNUSED
-#  define P_UNUSED(var) ((void)var)
-# endif
 
 # define BUF			buf->buf
 # define GAP_START		buf->gap_start

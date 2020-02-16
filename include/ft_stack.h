@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 17:57:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/01/25 18:05:09 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 21:09:45 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ typedef struct	s_sstack
 /*
 **DEV
 */
-void	ft_stk_init(t_stack *stk);
-void	ft_stk_push(t_stack *stk, void *data, size_t size_data);
-void	*ft_stk_pop(t_stack *stk);
-int		ft_stk_is_empty(t_stack *stk);
+void			ft_stk_init(t_stack *stk);
+void			ft_stk_push(t_stack *stk, void *data, size_t size_data);
+void			*ft_stk_pop(t_stack *stk);
+int				ft_stk_is_empty(t_stack *stk);
 
 #endif
