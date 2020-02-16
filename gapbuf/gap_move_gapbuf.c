@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/05 02:08:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 21:33:36 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 static void		gap_move_left(t_gapbuf *buf, size_t ind)
 {
-	if (LEN_STR)
+	if (buf->len_string)
 	{
-		if ((GAP_END + 1) != ind)
+		if ((buf->gap_end + 1) != ind)
 		{
-			while (GAP_START != ind)
+			while (buf->gap_start != ind)
 			{
-				BUF[GAP_END] = BUF[GAP_START - 1];
-				BUF[GAP_START - 1] = '\0';
-				--GAP_START;
-				--GAP_END;
+				buf->buf[buf->gap_end] = buf->buf[buf->gap_start - 1];
+				buf->buf[buf->gap_start - 1] = '\0';
+				--buf->gap_start;
+				--buf->gap_end;
 			}
 		}
 	}
@@ -31,16 +31,16 @@ static void		gap_move_left(t_gapbuf *buf, size_t ind)
 
 static void		gap_move_right(t_gapbuf *buf, size_t ind)
 {
-	if (LEN_STR)
+	if (buf->len_string)
 	{
-		if (GAP_END + 1 != ind)
+		if (buf->gap_end + 1 != ind)
 		{
-			while (GAP_END != (ind - 1))
+			while (buf->gap_end != (ind - 1))
 			{
-				BUF[GAP_START] = BUF[GAP_END + 1];
-				BUF[GAP_END + 1] = '\0';
-				++GAP_START;
-				++GAP_END;
+				buf->buf[buf->gap_start] = buf->buf[buf->gap_end + 1];
+				buf->buf[buf->gap_end + 1] = '\0';
+				++buf->gap_start;
+				++buf->gap_end;
 			}
 		}
 	}
@@ -48,11 +48,11 @@ static void		gap_move_right(t_gapbuf *buf, size_t ind)
 
 void			gap_move(t_gapbuf *buf, size_t ind)
 {
-	if (BUF)
+	if (buf->buf)
 	{
-		if (GAP_START < ind)
+		if (buf->gap_start < ind)
 			gap_move_right(buf, ind);
-		else if (GAP_START > ind)
+		else if (buf->gap_start > ind)
 			gap_move_left(buf, ind);
 	}
 }
@@ -61,9 +61,9 @@ void			gapbuf_move_to_slide(t_gapbuf *buf)
 {
 	int ind;
 
-	ind = get_sym_ind_at_buf(buf, GAP_SLIDE);
-	if (!ind || (GAP_END != (size_t)ind - 1 && GAP_SLIDE < LEN_STR))
+	ind = get_sym_ind_at_buf(buf, buf->slide);
+	if (!ind || (buf->gap_end != (size_t)ind - 1 && buf->slide < buf->len_string))
 		gap_move(buf, ind);
 	if (ind == -1)
-		die_gap("gapbuf_move_to_slide: SLIDE > LEN_STR");
+		die_gap("gapbuf_move_to_slide: SLIDE > buf->len_string");
 }

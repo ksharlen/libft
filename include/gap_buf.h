@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/16 21:10:48 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 21:35:18 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,6 @@
 
 # define DFLT_SIZE_GAP		10
 
-# define BUF			buf->buf
-# define GAP_START		buf->gap_start
-# define GAP_END		buf->gap_end
-# define GAP_SIZE_BUF	buf->size_buf
-# define SIZE_GAP_BUF	buf->size_gap_buf
-# define LEN_STR		buf->len_string
-# define GAP_SLIDE		buf->slide
-
 typedef struct	s_gapbuf
 {
 	char	*buf;
@@ -42,7 +34,7 @@ typedef struct	s_gapbuf
 	size_t	len_string;
 	size_t	slide;
 	size_t	size_gap_buf;
-	size_t 	gap_start;
+	size_t	gap_start;
 	size_t	gap_end;
 }				t_gapbuf;
 

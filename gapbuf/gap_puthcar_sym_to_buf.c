@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/01 16:35:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 21:33:36 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,34 @@
 static void		gap_put_sym_in_str(t_gapbuf *buf, char sym)
 {
 	gapbuf_move_to_slide(buf);
-	BUF[GAP_START++] = sym;
-	LEN_STR++;
-	if (SIZE_GAP_BUF)
-		SIZE_GAP_BUF--;
-	if (!SIZE_GAP_BUF)
+	buf->buf[buf->gap_start++] = sym;
+	buf->len_string++;
+	if (buf->size_gap_buf)
+		buf->size_gap_buf--;
+	if (!buf->size_gap_buf)
 		get_new_gapbuf(buf, buf->main_size_gap_buf);
-	GAP_SLIDE++;
+	buf->slide++;
 }
 
 static void		gap_put_end_str(t_gapbuf *buf, char sym)
 {
-	if (GAP_START == (LEN_STR + 1))
+	if (buf->gap_start == (buf->len_string + 1))
 	{
-		BUF[LEN_STR] = sym;
-		++GAP_START;
-		++GAP_END;
+		buf->buf[buf->len_string] = sym;
+		++buf->gap_start;
+		++buf->gap_end;
 	}
-	else if (GAP_START < (LEN_STR + SIZE_GAP_BUF))
-		BUF[LEN_STR + SIZE_GAP_BUF] = sym;
-	GAP_SLIDE++;
-	LEN_STR++;
+	else if (buf->gap_start < (buf->len_string + buf->size_gap_buf))
+		buf->buf[buf->len_string + buf->size_gap_buf] = sym;
+	buf->slide++;
+	buf->len_string++;
 }
 
 void			gap_putchar_in_buf(t_gapbuf *buf, char sym)
 {
-	if ((LEN_STR + SIZE_GAP_BUF) < GAP_SIZE_BUF)
+	if ((buf->len_string + buf->size_gap_buf) < buf->size_buf)
 	{
-		if (GAP_SLIDE == LEN_STR)
+		if (buf->slide == buf->len_string)
 			gap_put_end_str(buf, sym);
 		else
 			gap_put_sym_in_str(buf, sym);

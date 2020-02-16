@@ -3,8 +3,6 @@
 #include <unistd.h>
 #include <term.h>
 
-// #define PRINT_KEY
-
 FILE *fp;
 
 enum	key
@@ -91,7 +89,7 @@ void	print_buf(t_gapbuf *buf)
 	write(STDOUT_FILENO, "\e[2K", 4);
 	while (i < SIZE_BUF)
 	{
-		write(STDOUT_FILENO, &BUF[i], sizeof(char));
+		write(STDOUT_FILENO, &buf->buf[i], sizeof(char));
 		++i;
 	}
 	write(STDOUT_FILENO, "\e[?25h", 6);
@@ -101,8 +99,8 @@ void	print_stat(t_gapbuf *buf, const char *str)
 {
 	char	buf_w[200] = {0};
 
-	snprintf(buf_w, sizeof(buf_w), "LEN_STR: %zd	GAP_SLIDE: %zd	SIZE_GAP_BUF: %zd	GAP_START: %zd	GAP_END: %zd	LEN_OUT: %zd",
-								LEN_STR, GAP_SLIDE, SIZE_GAP_BUF, GAP_START, GAP_END, strlen(str));
+	snprintf(buf_w, sizeof(buf_w), "buf->len_string: %zd	buf->slide: %zd	buf->size_gap_buf: %zd	buf->gap_start: %zd	buf->gap_end: %zd	LEN_OUT: %zd",
+								buf->len_string, buf->slide, buf->size_gap_buf, buf->gap_start, buf->gap_end, strlen(str));
 	write(STDOUT_FILENO, "\e[10;0H", 7);
 	write(STDOUT_FILENO, "\e[2K", 4);
 	write(STDOUT_FILENO, buf_w, 200);
@@ -162,7 +160,7 @@ void		input(t_gapbuf *buf)
 		}
 			str = gap_get_buf(buf);
 			init_cursor();
-			write(STDOUT_FILENO, str, LEN_STR);
+			write(STDOUT_FILENO, str, buf->len_string);
 print_stat(buf, str);
 			snprintf(buf_w, sizeof(buf_w), "\x1b[%d;%dH", cr.y, cr.x);
 			write(STDOUT_FILENO, buf_w, strlen(buf_w));
