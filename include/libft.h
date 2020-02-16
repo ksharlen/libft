@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/16 20:20:11 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 21:08:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,6 @@
 # include "ft_getopt.h"
 # include "ft_dbl_list_cycl.h"
 
-# ifndef NULL
-#  define NULL ((void *)0)
-# endif
-
 # ifndef TRUE
 #  define TRUE 1
 # endif
@@ -43,36 +39,9 @@
 # define FD_MAX				7198
 # define BUFF_SIZE			20
 
-/*
-**OTHER
-*/
-# define SP(x) ((x) == ' ')
-# define NL(x) ((x) == '\n')
-# define TB(x) ((x) == '\t')
-# define VT(x) ((x) == '\v')
-# define NP(x) ((x) == '\f')
-# define RK(x) ((x) == '\r')
-# define RT(x) ((x) == '\b')
-# define SG(x) ((x) == '\a')
-# define TABS(x) (SP(x) || NL(x) || TB(x) || VT(x) || NP(x) || RK(x))
-
-# define COPY ft_strcpy
-# define PASTE ft_strcat
-# define EXIT() exit(EXIT_FAILURE)
-
 # define DECIMAL				10
 
 # define FIRST_SYM				0
-# define FT_ABS(x)				((x) > 0 ? (x) : -(x))
-# define NUM_MOD(x)				((x) = ((x) > 0) ? (x) : -(x))
-# define CHECK_MOD(x)			((x) > 0) ? (x) : -(x)
-# define SET_BIT(val, num)		((val) = ((val) | (1 << (num))))
-# define NUM_CMP(a, b) 			((((a) ^ (b)) == 0) ? 0 : 1)
-# define FT_CLEAN_UP(ptr, size) ((ptr) = (char[(size)]){0})
-
-# ifndef P_UNUSED
-#  define P_UNUSED(x)			(void)(x)
-# endif
 
 # define FLAG_ON			1
 # define FLAG_OFF			0
@@ -128,9 +97,6 @@ enum			e_errors
 	E_TPUTS,
 	E_WRITE
 };
-
-# define CHK_SYS_ERR_EXT(val, err, name) if ((val) == F) ft_err_exit(err, name)
-# define CHK_NULL_PTR(ptr, err, name) if (!(ptr)) ft_err_exit(err, name)
 
 typedef int8_t	t_error;
 typedef	uint8_t	t_byte;
@@ -340,5 +306,7 @@ char			*ft_strreplace(char *in, char *from);
 void			ft_swap_sym(char *one, char *two);
 void			ft_chk_null_ptr(void *ptr, t_error nerror);
 void			ft_chk_sys_error(ssize_t val, t_error nerror);
+long long		ft_abs(long long num);
+void			ft_num_mod(long long *num);
 
 #endif

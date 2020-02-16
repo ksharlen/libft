@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 18:00:11 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/23 18:01:58 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 20:42:36 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_skiptabs_sym(const char *str, char sym)
 {
 	if (str && *str)
 	{
-		while (str && *str && (TABS(*str) || *str == sym))
+		while (str && *str && (ft_isspace(*str) || *str == sym))
 			++str;
 	}
 	return ((char *)str);

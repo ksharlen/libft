@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 13:54:55 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/23 07:45:42 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 20:46:10 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int		check_star_and_push(va_list form)
 		if (g_spec.width < 0)
 		{
 			g_spec.flags |= DASH;
-			NUM_MOD(g_spec.width);
+			g_spec.width = g_spec.width > 0 ? g_spec.width : -g_spec.width;
 		}
 		ret_shift = 1;
 	}

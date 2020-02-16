@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 09:35:12 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/08/12 12:20:11 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 21:01:37 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static unsigned			set_mask_10(unsigned val, unsigned t_bytes)
 	--t_bytes;
 	while (t_bytes)
 	{
-		SET_BIT(val, (t_bytes * 8) - 1);
+		val = (val | (1 << (t_bytes * 8 - 1)));
 		t_bytes--;
 	}
 	return (val);

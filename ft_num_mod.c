@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_num_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 15:44:45 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/16 20:41:04 by ksharlen         ###   ########.fr       */
+/*   Created: 2020/02/16 20:49:32 by ksharlen          #+#    #+#             */
+/*   Updated: 2020/02/16 20:50:45 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isspace(int c)
+void	ft_num_mod(long long *num)
 {
-	c = (unsigned char)c;
-	return (c == '\t' || c == '\n' || c == '\v' ||
-		c == '\f' || c == '\r' || c == ' ');
+	*num = ft_abs(*num);
 }

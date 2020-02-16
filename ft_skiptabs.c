@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 15:53:35 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/24 15:35:41 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 20:42:17 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_skiptabs(const char *str)
 {
 	if (str && *str)
 	{
-		while (str && TABS(*str))
+		while (str && ft_isspace(*str))
 			++str;
 	}
 	return ((char *)str);

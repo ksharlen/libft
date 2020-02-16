@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 19:39:51 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/09/26 17:23:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 20:43:01 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int		ft_num_space_end(const char *str, char sym)
 	if (str && *str)
 	{
 		p_str = ft_strmoveptr_end(str, sym);
-		while (p_str && *p_str && TABS(*p_str))
+		while (p_str && *p_str && ft_isspace(*p_str))
 		{
 			spaces++;
 			p_str--;

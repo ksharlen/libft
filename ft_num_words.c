@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 20:35:20 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/16 21:43:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 20:43:57 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static char	*ft_skip_word(const char *str, const char *entry_sym)
 static char	*ft_skip_not_words(const char *str, const char *entry_sym)
 {
 	if (str && *str && entry_sym)
-		while (*str && (TABS(*str) ||
+		while (*str && (ft_isspace(*str) ||
 			((!ft_strchr(entry_sym, *str)) && !ft_isalnum(*str))))
 			++str;
 	return ((char *)str);

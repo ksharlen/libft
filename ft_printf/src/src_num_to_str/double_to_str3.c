@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   double_to_str3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 10:40:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/24 16:49:46 by cormund          ###   ########.fr       */
+/*   Updated: 2020/02/16 21:00:00 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int		push_e(unsigned char *buf, t_long *res, ssize_t size_num)
 	n = 0;
 	while (res->e || n < 2)
 	{
-		buf[--size_num] = (CHECK_MOD(res->e) % 10) + '0';
+		buf[--size_num] = (ft_abs(res->e) % 10) + '0';
 		res->e /= 10;
 		++n;
 	}

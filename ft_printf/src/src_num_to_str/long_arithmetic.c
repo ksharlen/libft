@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   long_arithmetic.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 09:24:29 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/24 15:00:13 by cormund          ###   ########.fr       */
+/*   Updated: 2020/02/16 20:59:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static void			add_and_norm(t_long *res, unsigned int *nbr, int *len)
 static void			long_arithmetic_power(short int exponenta, t_long *res)
 {
 	res->nbr_tmp[0] = 1;
-	res->len_tmp = (exponenta >= 0 ? 1 : CHECK_MOD(exponenta));
+	res->len_tmp = (exponenta >= 0 ? 1 : ft_abs(exponenta));
 	while (exponenta >= 28)
 	{
 		mul_and_norm(res, TWO_POW_TWENTY_EIGHT, res->len_tmp);
@@ -84,7 +84,7 @@ static void			long_arithmetic_power(short int exponenta, t_long *res)
 		exponenta += 12;
 	}
 	if (exponenta < 0)
-		mul_and_norm(res, ft_pow(5, CHECK_MOD(exponenta)), res->len_tmp);
+		mul_and_norm(res, ft_pow(5, ft_abs(exponenta)), res->len_tmp);
 }
 
 void				long_arithmetic(t_uni real_num, t_long *res)
@@ -127,7 +127,8 @@ void				malloc_long(t_uni *real_num, t_long *res)
 	while (i-- && !(real_num->bits.mantissa >> (63 - i) & 1))
 		;
 	exp -= i;
-	res->len_fract = (exp < -6 && real_num->bits.mantissa ? NUM_MOD(exp) : 6);
+	res->len_fract = (exp < -6 && real_num->bits.mantissa ?
+		exp = ft_abs(exp) : 6);
 	res->len_tmp = res->len_int + res->len_fract;
 	res->nbr_int = (unsigned int *)malloc(sizeof(int) * res->len_int);
 	res->nbr_fract = (unsigned int *)malloc(sizeof(int) * (res->len_fract + 1));

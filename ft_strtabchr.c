@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:55:55 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/08 16:00:15 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 20:43:26 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strtabchr(const char *str, const char sym)
 	p_str = NULL;
 	if (str && *str)
 	{
-		while (str && *str && !TABS(*str))
+		while (str && *str && !ft_isspace(*str))
 		{
 			if (*str == sym)
 			{

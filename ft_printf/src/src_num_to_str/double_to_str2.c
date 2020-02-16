@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   double_to_str2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 10:47:39 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/24 16:50:00 by cormund          ###   ########.fr       */
+/*   Updated: 2020/02/16 20:59:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ size_t			size_num_for_long(t_long *res)
 		check_e(res);
 		res->len_tmp += (res->e < 0 ? res->e : 0);
 		rounding_number(res, res->nbr_tmp, res->len_tmp - l - 1);
-		l += 3 + ft_size_num((CHECK_MOD(res->e) / 10));
+		l += 3 + ft_size_num((ft_abs(res->e) / 10));
 		res->len_fract += res->e;
 		res->len_int = 1;
 	}

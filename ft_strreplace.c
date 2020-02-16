@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 18:22:52 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/06 18:30:39 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 21:07:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ char	*ft_strreplace(char *in, char *from)
 	{
 		len_in = ft_strlen(in);
 		len_from = ft_strlen(from);
-		CHK_NULL_PTR(dst = ft_strnew(len_in + len_from), E_MALLOC, "libft");
+		dst = ft_strnew(len_in + len_from);
+		ft_chk_null_ptr(dst, E_MALLOC);
 		ft_strcat(dst, in);
 		ft_strcat(dst, from);
 		ft_strdel(&in);
