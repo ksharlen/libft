@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/16 21:35:18 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/16 21:42:09 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,5 @@ void			gap_move(t_gapbuf *buf, size_t ind);
 **PRINT_BUF
 */
 void			gap_print_buf(t_gapbuf *buf);
-
-/*
-**TMP
-*/
-void			print_stat_t_gapbuf(t_gapbuf *buf);
-void			print_buf_int(char *buf, size_t size_buf);
-void			print_buf_char(char *buf, size_t size_buf);
 
 #endif
