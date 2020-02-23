@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 18:12:12 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/14 16:20:35 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/22 22:32:10 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char *const argv[], const char *stringopt)
 	if (argc > 1)
 	{
 		p_stringopt = (char *)stringopt;
-		p_stringopt = ft_skipfirst(p_stringopt, ':');
+		p_stringopt = (char *)ft_skipfirst(p_stringopt, ':');
 		opt = ft_getopt_internal(argc, argv, stringopt);
 		if (opt != -1 && opt != '?')
 			opt = check_opt_on_val(p_stringopt, opt, argv, argc);

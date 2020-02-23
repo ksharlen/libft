@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 19:39:51 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/16 20:43:01 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/22 22:32:42 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static char		*ft_alloc_before(char **str, char sym)
 		ret_str = (char *)ft_strnew(sizeof(char) * len);
 		ft_memcpy(ret_str, *str, len);
 		(*str) = *(str) + len;
-		*str = ft_skipfirst(*str, sym);
+		*str = (char *)ft_skipfirst(*str, sym);
 	}
 	return (ret_str);
 }
