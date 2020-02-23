@@ -159,7 +159,8 @@ SRC_LIBFT 		:= ft_arrfind.c\
 						ft_strreplace.c\
 						ft_swap_sym.c\
 						ft_abs.c\
-						ft_num_mod.c
+						ft_num_mod.c\
+						ft_print_nsym.c
 
 SRCS 			:= $(SRC_LIBFT)\
 						$(SRCS_FT_PRINTF)\
