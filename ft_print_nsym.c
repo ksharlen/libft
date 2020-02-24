@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 15:25:52 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/08 19:19:30 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 14:36:37 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 void	ft_print_nsym(int fd, char sym, size_t n)
 {
-	void	*str;
+	char	buf[n];
 
 	if (n)
 	{
-		str = ft_memalloc(n);
-		ft_memset(str, sym, n);
-		write(fd, str, n);
-		ft_memdel(&str);
+		ft_memset(buf, sym, n);
+		write(fd, buf, n);
 	}
 }
