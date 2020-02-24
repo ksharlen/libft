@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/22 22:31:39 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 00:42:46 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -308,5 +308,6 @@ void			ft_chk_null_ptr(void *ptr, t_error nerror);
 void			ft_chk_sys_error(ssize_t val, t_error nerror);
 long long		ft_abs(long long num);
 void			ft_num_mod(long long *num);
+ssize_t			ft_write(int fildes, const void *buf, size_t nbyte);
 
 #endif

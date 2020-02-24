@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2020/02/16 20:51:15 by ksharlen         ###   ########.fr        #
+#    Updated: 2020/02/25 00:42:58 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -160,7 +160,8 @@ SRC_LIBFT 		:= ft_arrfind.c\
 						ft_swap_sym.c\
 						ft_abs.c\
 						ft_num_mod.c\
-						ft_print_nsym.c
+						ft_print_nsym.c\
+						ft_write.c
 
 SRCS 			:= $(SRC_LIBFT)\
 						$(SRCS_FT_PRINTF)\
