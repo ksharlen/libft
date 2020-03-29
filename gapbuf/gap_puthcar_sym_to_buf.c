@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/16 21:33:36 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/03/29 19:05:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void		gap_put_sym_in_str(t_gapbuf *buf, char sym)
 	buf->slide++;
 }
 
-static void		gap_put_end_str(t_gapbuf *buf, char sym)
+void			gap_put_end_str(t_gapbuf *buf, char sym)
 {
 	if (buf->gap_start == (buf->len_string + 1))
 	{

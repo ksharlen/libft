@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:23:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/16 21:42:09 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/03/29 19:05:41 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void			gap_init(t_gapbuf *buf, size_t size_buf, size_t size_gap);
 char			*gap_get_buf(t_gapbuf *buf);
 void			gap_slide_left(t_gapbuf *buf);
 void			gap_slide_right(t_gapbuf *buf);
+void			gap_put_end_str(t_gapbuf *buf, char sym);
 
 /*
 **INTERFACE_DEL_INS_SYM
